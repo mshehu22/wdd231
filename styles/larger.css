@@ -1,0 +1,182 @@
+/* ------------------------
+   WDD 231 - Home Page
+   small.css
+------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003366;
+    color: white;
+    padding: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.logo span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* HAMBURGER BUTTON */
+
+#menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* NAVIGATION */
+
+nav {
+    background-color: #00509d;
+}
+
+nav ul {
+    list-style: none;
+    display: none;
+}
+
+nav ul.open {
+    display: block;
+}
+
+nav a {
+    display: block;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: #002855;
+}
+
+.active {
+    background-color: #f4b400;
+    color: black;
+    font-weight: bold;
+}
+
+/* MAIN */
+
+main {
+    padding: 1rem;
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+section {
+    background: white;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,.1);
+}
+
+section h2 {
+    margin-bottom: .75rem;
+}
+
+section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.buttons button {
+    flex: 1;
+    padding: .7rem;
+    border: none;
+    background: #003366;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buttons button:hover {
+    background: #00509d;
+}
+
+/* COURSE CARDS */
+
+#courses {
+    display: grid;
+    gap: .75rem;
+}
+
+.course-card {
+    padding: .8rem;
+    border-radius: 6px;
+    background: #ddd;
+    text-align: center;
+    font-weight: bold;
+}
+
+.completed {
+    background: #2e7d32;
+    color: white;
+}
+
+/* FOOTER */
+
+footer {
+    background: #003366;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.social {
+    margin-bottom: 1rem;
+}
+
+.social a {
+    color: white;
+    margin: 0 .5rem;
+    text-decoration: none;
+}
+
+.social a:hover {
+    color: #f4b400;
+}
