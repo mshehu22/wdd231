@@ -1,0 +1,17 @@
+{
+  "familyName": "Shehu",
+  "movedInDate": "2025-09-01",
+  "visitedByBishopric": true,
+  "members": [
+    {
+      "name": "Magdalene Shehu",
+      "gender": "Female",
+      "birthdate": "1985-05-10"
+    },
+    {
+      "name": "Ethan Salim Shehu",
+      "gender": "Male",
+      "birthdate": "2016-03-12"
+    }
+  ]
+}
