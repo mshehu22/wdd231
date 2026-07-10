@@ -5,49 +5,49 @@
       "address": "Wuse Zone 3, Abuja",
       "phone": "+234 803 111 1111",
       "website": "https://hmedix.com",
-      "image": "images/hmedix.webp"
+      "image": "../images/hmedix.png"
     },
     {
       "name": "Dangote Group",
       "address": "Central Business District, Abuja",
       "phone": "+234 803 222 2222",
       "website": "https://dangote.com",
-      "image": "images/dangote.webp"
+      "image": "../images/dangote.png"
     },
     {
       "name": "Access Bank",
       "address": "Garki, Abuja",
       "phone": "+234 803 333 3333",
-      "website": "https://accessbankplc.com",
-      "image": "images/access.webp"
+      "website": "https://www.accessbankplc.com",
+      "image": "../images/access.png"
     },
     {
       "name": "MTN Nigeria",
       "address": "Maitama, Abuja",
       "phone": "+234 803 444 4444",
-      "website": "https://mtn.ng",
-      "image": "images/mtn.webp"
+      "website": "https://www.mtn.ng",
+      "image": "../images/mtn.png"
     },
     {
       "name": "Jumia Nigeria",
       "address": "Wuse 2, Abuja",
       "phone": "+234 803 555 5555",
-      "website": "https://jumia.com.ng",
-      "image": "images/jumia.webp"
+      "website": "https://www.jumia.com.ng",
+      "image": "../images/jumia.png"
     },
     {
       "name": "Zenith Bank",
       "address": "Asokoro, Abuja",
       "phone": "+234 803 666 6666",
-      "website": "https://zenithbank.com",
-      "image": "images/zenith.webp"
+      "website": "https://www.zenithbank.com",
+      "image": "../images/zenith.png"
     },
     {
       "name": "Airtel Nigeria",
       "address": "Utako, Abuja",
       "phone": "+234 803 777 7777",
-      "website": "https://airtel.com.ng",
-      "image": "images/airtel.webp"
+      "website": "https://www.airtel.com.ng",
+      "image": "../images/airtel.png"
     }
   ]
 }
