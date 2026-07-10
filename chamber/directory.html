@@ -4,9 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Chamber Directory | Magdalene Shehu</title>
 
+    <meta name="description"
+        content="Abuja Chamber of Commerce directory page showing member businesses and organizations.">
+
+    <meta name="author" content="Magdalene Shehu">
+
+    <meta property="og:title" content="Abuja Chamber Directory | Magdalene Shehu">
+
+    <meta property="og:description"
+        content="Explore businesses and organizations in the Abuja Chamber of Commerce directory.">
+
+    <meta property="og:image" content="https://mshehu22.github.io/wdd231/chamber/images/chamber.webp">
+
+    <meta property="og:url" content="https://mshehu22.github.io/wdd231/chamber/directory.html">
+
     <link rel="icon" href="../favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../styles/normalize.css">
     <link rel="stylesheet" href="styles/directory.css">
@@ -17,23 +37,25 @@
 <body>
 
     <header>
-        <h1>Abuja Chamber of Commerce Directory</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a class="active" href="directory.html">Directory</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="directory.html" class="active">Directory</a>
-    </nav>
-
     <main>
-        <h2>Member Directory</h2>
 
-        <div class="buttons">
+        <h1>Abuja Chamber of Commerce Directory</h1>
+
+        <section class="buttons">
             <button id="grid">Grid View</button>
             <button id="list">List View</button>
-        </div>
+        </section>
 
         <section id="members" class="grid"></section>
+
     </main>
 
     <footer>
