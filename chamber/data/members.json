@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Hmedix Nigeria Ltd",
+    "address": "Wuse Zone 3, Abuja",
+    "phone": "+234 803 111 1111",
+    "website": "https://www.hmedix.com",
+    "image": "https://via.placeholder.com/200",
+    "membership": "Gold"
+  },
+  {
+    "name": "Dangote Group",
+    "address": "Central Business District, Abuja",
+    "phone": "+234 803 222 2222",
+    "website": "https://www.dangote.com",
+    "image": "https://via.placeholder.com/200",
+    "membership": "Silver"
+  },
+  {
+    "name": "Access Bank",
+    "address": "Garki, Abuja",
+    "phone": "+234 803 333 3333",
+    "website": "https://www.accessbankplc.com",
+    "image": "https://via.placeholder.com/200",
+    "membership": "Gold"
+  },
+  {
+    "name": "MTN Nigeria",
+    "address": "Maitama, Abuja",
+    "phone": "+234 803 444 4444",
+    "website": "https://www.mtn.ng",
+    "image": "https://via.placeholder.com/200",
+    "membership": "Bronze"
+  },
+  {
+    "name": "Jumia Nigeria",
+    "address": "Wuse 2, Abuja",
+    "phone": "+234 803 555 5555",
+    "website": "https://www.jumia.com.ng",
+    "image": "https://via.placeholder.com/200",
+    "membership": "Silver"
+  },
+  {
+    "name": "Zenith Bank",
+    "address": "Asokoro, Abuja",
+    "phone": "+234 803 666 6666",
+    "website": "https://www.zenithbank.com",
+    "image": "https://via.placeholder.com/200",
+    "membership": "Gold"
+  },
+  {
+    "name": "Airtel Nigeria",
+    "address": "Utako, Abuja",
+    "phone": "+234 803 777 7777",
+    "website": "https://www.airtel.com.ng",
+    "image": "https://via.placeholder.com/200",
+    "membership": "Bronze"
+  }
+]
