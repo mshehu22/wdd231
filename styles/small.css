@@ -11,7 +11,7 @@
 
 body {
     font-family: "Roboto", sans-serif;
-    background: #f8f9fa;
+    background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
 }
@@ -22,7 +22,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #003366;
+    background-color: #003366;
     color: white;
     padding: 1rem;
 }
@@ -40,7 +40,7 @@ header {
 
 .logo span {
     font-size: 1.3rem;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 /* MENU BUTTON */
@@ -56,16 +56,17 @@ header {
 /* NAVIGATION */
 
 nav {
-    background: #00509d;
+    background-color: #00509d;
 }
 
 nav ul {
     list-style: none;
     display: none;
+    flex-direction: column;
 }
 
 nav ul.open {
-    display: block;
+    display: flex;
 }
 
 nav li {
@@ -78,14 +79,15 @@ nav a {
     color: white;
     padding: 1rem;
     text-align: center;
+    font-weight: 500;
 }
 
 nav a:hover {
-    background: #002855;
+    background-color: #002855;
 }
 
 .active {
-    background: #f4b400;
+    background-color: #f4b400;
     color: black;
     font-weight: bold;
 }
@@ -103,7 +105,7 @@ h1 {
 }
 
 section {
-    background: white;
+    background-color: white;
     margin-bottom: 1.5rem;
     padding: 1rem;
     border-radius: 10px;
@@ -116,8 +118,7 @@ section h2 {
 
 /* PROFILE IMAGE */
 
-.student-photo img,
-section img {
+.profile-photo {
     width: 220px;
     max-width: 100%;
     height: auto;
@@ -137,17 +138,18 @@ section img {
 
 .buttons button {
     flex: 1;
+    min-width: 120px;
     padding: .75rem;
     border: none;
     border-radius: 5px;
-    background: #003366;
+    background-color: #003366;
     color: white;
     cursor: pointer;
     font-weight: bold;
 }
 
 .buttons button:hover {
-    background: #00509d;
+    background-color: #00509d;
 }
 
 /* COURSE CARDS */
@@ -158,7 +160,7 @@ section img {
 }
 
 .course-card {
-    background: #ddd;
+    background-color: #ddd;
     padding: 1rem;
     border-radius: 6px;
     text-align: center;
@@ -166,14 +168,20 @@ section img {
 }
 
 .completed {
-    background: #2e7d32;
+    background-color: #2e7d32;
     color: white;
+}
+
+#credits {
+    margin-top: 1rem;
+    font-weight: bold;
+    text-align: center;
 }
 
 /* FOOTER */
 
 footer {
-    background: #003366;
+    background-color: #003366;
     color: white;
     text-align: center;
     padding: 1.5rem;
