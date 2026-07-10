@@ -40,4 +40,12 @@ listButton.addEventListener("click", () => {
     membersContainer.classList.remove("grid");
 });
 
+// Footer last modified
+const lastModified = document.querySelector("#lastModified");
+
+if (lastModified) {
+    lastModified.textContent =
+        `Last Modified: ${document.lastModified}`;
+}
+
 getMembers();
