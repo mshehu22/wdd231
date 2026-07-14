@@ -1,73 +1,111 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Roboto, sans-serif;
+    background: #f5f5f5;
     margin: 0;
-    background-color: #f5f5f5;
 }
 
 header,
 footer {
-    background-color: #003366;
+    background: #003366;
     color: white;
     padding: 1rem;
 }
 
-nav {
-    background-color: #00509d;
-}
-
-nav ul {
+.navigation {
     display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    gap: 1rem;
 }
 
-nav a {
+.navigation a {
     color: white;
     text-decoration: none;
-    padding: 1rem;
-    display: block;
 }
 
-nav a.active {
-    background-color: gold;
+.active {
+    background: gold;
     color: black;
+    padding: .5rem;
+    border-radius: 5px;
 }
 
-h1 {
+#menu {
+    display: none;
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
     padding: 1rem;
 }
 
 .buttons {
     text-align: center;
-    margin: 1rem;
+    margin-bottom: 1rem;
 }
 
-#members.grid {
+.buttons button {
+    padding: .75rem 1rem;
+    margin: .5rem;
+}
+
+.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
-}
+    grid-template-columns:
+        repeat(auto-fit,
+        minmax(250px,1fr));
 
-#members.list {
-    display: block;
-    padding: 1rem;
+    gap: 1rem;
 }
 
 .card {
     background: white;
-    border: 1px solid #ccc;
     padding: 1rem;
+    border-radius: 10px;
     text-align: center;
 }
 
 .card img {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
+    width: 150px;
+    height: auto;
 }
 
-footer {
-    text-align: center;
+/* LIST VIEW */
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.list .card {
+    text-align: left;
+}
+
+.list img {
+    display: none;
+}
+
+/* MOBILE */
+
+@media (max-width:700px) {
+
+    #menu {
+        display: block;
+        font-size: 2rem;
+        border: none;
+        background: none;
+        color: white;
+    }
+
+    .navigation {
+        display: none;
+        flex-direction: column;
+    }
+
+    .navigation.open {
+        display: flex;
+    }
 }
