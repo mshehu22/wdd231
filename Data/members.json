@@ -1,0 +1,50 @@
+[
+  {
+    "name": "MTN Nigeria",
+    "address": "Abuja, Nigeria",
+    "phone": "+234 803 123 4567",
+    "website": "https://www.mtn.ng",
+    "image": "../images/mtn.png",
+    "membership": "Gold"
+  },
+  {
+    "name": "Zenith Bank",
+    "address": "Abuja, Nigeria",
+    "phone": "+234 802 987 6543",
+    "website": "https://www.zenithbank.com",
+    "image": "../images/zenith.png",
+    "membership": "Gold"
+  },
+  {
+    "name": "Airtel Nigeria",
+    "address": "Abuja, Nigeria",
+    "phone": "+234 801 555 1234",
+    "website": "https://www.airtel.com.ng",
+    "image": "../images/airtel.png",
+    "membership": "Silver"
+  },
+  {
+    "name": "Dangote Group",
+    "address": "Abuja, Nigeria",
+    "phone": "+234 809 111 2222",
+    "website": "https://www.dangote.com",
+    "image": "../images/dangote.png",
+    "membership": "Gold"
+  },
+  {
+    "name": "Hmedix",
+    "address": "Abuja, Nigeria",
+    "phone": "+234 806 222 3333",
+    "website": "https://www.hmedix.com",
+    "image": "../images/hmedix.png",
+    "membership": "Silver"
+  },
+  {
+    "name": "Jumia Nigeria",
+    "address": "Abuja, Nigeria",
+    "phone": "+234 700 600 0000",
+    "website": "https://www.jumia.com.ng",
+    "image": "../images/jumia.png",
+    "membership": "Gold"
+  }
+]
