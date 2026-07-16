@@ -5,21 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Abuja Chamber of Commerce | Home</title>
+    <title>Abuja Chamber of Commerce Home | Magdalene Shehu</title>
 
     <meta name="description"
-        content="Welcome to the Abuja Chamber of Commerce. Find local events, weather information, business spotlights, and chamber membership opportunities.">
+        content="Welcome to the Abuja Chamber of Commerce. Explore local businesses, events, weather information, and chamber membership opportunities.">
 
     <meta name="author" content="Magdalene Shehu">
 
-    <meta property="og:title" content="Abuja Chamber of Commerce">
-    <meta property="og:description" content="Official website of the Abuja Chamber of Commerce.">
+    <meta property="og:title" content="Abuja Chamber of Commerce - Business Networking and Community">
+
+    <meta property="og:description"
+        content="Explore local businesses, chamber events, weather information, and opportunities to join the Abuja Chamber of Commerce community.">
+
     <meta property="og:image" content="https://mshehu22.github.io/wdd231/images/chamber.jpg">
+
     <meta property="og:url" content="https://mshehu22.github.io/wdd231/chamber/index.html">
 
     <link rel="icon" href="../favicon.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -31,6 +36,7 @@
     <script src="scripts/home.js" defer></script>
     <script src="scripts/weather.js" defer></script>
     <script src="scripts/spotlight.js" defer></script>
+
 </head>
 
 <body>
@@ -42,44 +48,53 @@
         <nav class="navigation">
             <a class="active" href="index.html">Home</a>
             <a href="directory.html">Directory</a>
-            <a href="#">Discover</a>
-            <a href="#">Join</a>
+            <a href="discover.html">Discover</a>
+            <a href="join.html">Join</a>
         </nav>
 
     </header>
 
     <main>
 
-        <!-- HERO SECTION -->
+        <!-- Hero Section -->
         <section class="hero">
 
             <img src="../images/chamber.jpg" alt="Abuja Chamber of Commerce">
 
             <div class="hero-text">
+
                 <h1>Abuja Chamber of Commerce</h1>
 
-                <a class="cta" href="#">
+                <a class="cta" href="join.html">
                     Join the Chamber
                 </a>
+
             </div>
 
         </section>
 
-        <!-- EVENTS AND WEATHER -->
+        <!-- Main Content -->
         <div class="home-grid">
 
+            <!-- Events -->
             <section class="card">
+
                 <h2>Current Events</h2>
 
-                <p><strong>Abuja Business Networking Summit 2026</strong></p>
+                <p>
+                    <strong>Abuja Business Networking Summit 2026</strong>
+                </p>
 
                 <p>
-                    Entrepreneurship workshops and local business
-                    exhibitions will be held this month.
+                    Entrepreneurship workshops, local business exhibitions,
+                    and networking opportunities will take place this month.
                 </p>
+
             </section>
 
+            <!-- Weather -->
             <section class="card">
+
                 <h2>Weather</h2>
 
                 <div id="current-weather">
@@ -87,11 +102,12 @@
                 </div>
 
                 <div id="forecast"></div>
+
             </section>
 
         </div>
 
-        <!-- MEMBER SPOTLIGHTS -->
+        <!-- Spotlights -->
         <section class="spotlights">
 
             <h2>Member Spotlights</h2>
@@ -104,7 +120,9 @@
 
     <footer>
 
-        <p>Abuja Chamber of Commerce</p>
+        <p>
+            Abuja Chamber of Commerce
+        </p>
 
         <p>
             © <span id="year"></span>
