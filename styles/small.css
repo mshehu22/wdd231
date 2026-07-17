@@ -9,7 +9,9 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
+    background: #f4f4f4;
+    color: #333;
     overflow-x: hidden;
 }
 
@@ -27,8 +29,11 @@ header {
 #menu {
     display: block;
     margin: auto;
-    padding: .5rem;
+    background: white;
+    border: none;
+    padding: .5rem 1rem;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .navigation {
@@ -43,8 +48,8 @@ header {
 .navigation a {
     color: white;
     text-decoration: none;
-    padding: 1rem;
     text-align: center;
+    padding: 1rem;
 }
 
 .navigation a:hover {
@@ -53,7 +58,7 @@ header {
 
 .active {
     background: gold;
-    color: black;
+    color: black !important;
 }
 
 main {
@@ -71,8 +76,9 @@ h1 {
 }
 
 .buttons button {
-    padding: .75rem;
+    padding: .75rem 1rem;
     margin: .5rem;
+    cursor: pointer;
 }
 
 #members.grid {
@@ -81,15 +87,24 @@ h1 {
 }
 
 .card {
+    background: white;
     border: 1px solid #ccc;
     padding: 1rem;
     text-align: center;
-    background: white;
 }
 
 .card img {
     width: 120px;
     height: auto;
+    margin-bottom: 1rem;
+}
+
+.card h2 {
+    margin-bottom: 1rem;
+}
+
+.card p {
+    margin-bottom: .5rem;
 }
 
 #members.list {
@@ -102,18 +117,14 @@ h1 {
     display: none;
 }
 
-#members.list .card {
-    text-align: center;
-}
-
 footer {
     background: #003366;
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem;
     margin-top: 2rem;
 }
 
 footer p {
-    margin: .5rem 0;
+    margin: .5rem;
 }

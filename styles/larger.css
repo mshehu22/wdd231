@@ -5,7 +5,7 @@
     }
 
     .navigation {
-        display: flex !important;
+        display: flex;
         flex-direction: row;
         justify-content: center;
         gap: 1rem;
@@ -20,7 +20,7 @@
     #members.list .card {
         display: grid;
         grid-template-columns:
-            2fr 2fr 2fr 2fr;
+            repeat(4,1fr);
         align-items: center;
         text-align: left;
     }
@@ -29,6 +29,6 @@
         display: grid;
         grid-template-columns:
             repeat(3,1fr);
-        gap: 1rem;
+            gap: 1rem;
     }
 }

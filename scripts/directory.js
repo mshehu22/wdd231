@@ -1,19 +1,40 @@
-const membersContainer = document.querySelector("#members");
-const gridButton = document.querySelector("#grid");
-const listButton = document.querySelector("#list");
+const membersContainer =
+    document.querySelector("#members");
+
+const gridButton =
+    document.querySelector("#grid");
+
+const listButton =
+    document.querySelector("#list");
+
+const menuButton =
+    document.querySelector("#menu");
+
+const navigation =
+    document.querySelector(".navigation");
+
+menuButton.addEventListener("click", () => {
+    navigation.classList.toggle("open");
+});
 
 async function getMembers() {
-    const response = await fetch("data/members.json");
-    const data = await response.json();
 
-    displayMembers(data.members);
+    const response =
+        await fetch("data/members.json");
+
+    const data =
+        await response.json();
+
+    displayMembers(data);
 }
 
 function displayMembers(members) {
 
     members.forEach(member => {
 
-        const card = document.createElement("section");
+        const card =
+            document.createElement("section");
+
         card.classList.add("card");
 
         card.innerHTML = `
@@ -29,11 +50,12 @@ function displayMembers(members) {
 
             <p>
                 Membership Level:
-                ${member.membership}
+                ${member.membershipLevel}
             </p>
 
-            <a href="${member.website}" target="_blank">
-                Visit Website
+            <a href="${member.website}"
+               target="_blank">
+               Visit Website
             </a>
         `;
 
@@ -42,19 +64,24 @@ function displayMembers(members) {
 }
 
 gridButton.addEventListener("click", () => {
+
     membersContainer.classList.add("grid");
     membersContainer.classList.remove("list");
+
 });
 
 listButton.addEventListener("click", () => {
+
     membersContainer.classList.add("list");
     membersContainer.classList.remove("grid");
+
 });
 
-document.getElementById("year").textContent =
+document.querySelector("#year").textContent =
     new Date().getFullYear();
 
-document.getElementById("lastModified").textContent =
-    `Last Modified: ${document.lastModified}`;
+document.querySelector("#lastModified").textContent =
+    `Last Modified:
+    ${document.lastModified}`;
 
 getMembers();
