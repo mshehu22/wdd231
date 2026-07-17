@@ -1,28 +1,63 @@
-const membersContainer = document.querySelector("#members");
-const gridButton = document.querySelector("#grid");
-const listButton = document.querySelector("#list");
+const membersContainer =
+    document.querySelector("#members");
+
+const gridButton =
+    document.querySelector("#grid");
+
+const listButton =
+    document.querySelector("#list");
+
+const menuButton =
+    document.querySelector("#menu");
+
+const navigation =
+    document.querySelector(".navigation");
+
+menuButton.addEventListener("click", () => {
+    navigation.classList.toggle("open");
+});
 
 async function getMembers() {
-    const response = await fetch("data/members.json");
-    const data = await response.json();
 
-    displayMembers(data.members);
+    const response =
+        await fetch("data/members.json");
+
+    const data =
+        await response.json();
+
+    displayMembers(data);
 }
 
 function displayMembers(members) {
+
     members.forEach(member => {
 
-        const card = document.createElement("section");
+        const card =
+            document.createElement("section");
+
         card.classList.add("card");
 
         card.innerHTML = `
+
             <img src="${member.image}"
-                 alt="${member.name}">
+                 alt="${member.name} logo"
+                 loading="lazy">
+
             <h2>${member.name}</h2>
+
             <p>${member.address}</p>
+
             <p>${member.phone}</p>
-            <a href="${member.website}" target="_blank">
-                Visit Website
+
+            <p>
+                Membership Level:
+                ${member.membershipLevel}
+            </p>
+
+            <a href="${member.website}"
+               target="_blank"
+               rel="noopener">
+               Visit Website
             </a>
         `;
 
@@ -40,11 +75,11 @@ listButton.addEventListener("click", () => {
     membersContainer.classList.remove("grid");
 });
 
-getMembers();
-
-// Footer information
-document.getElementById("year").textContent =
+document.querySelector("#year").textContent =
     new Date().getFullYear();
 
-document.getElementById("lastModified").textContent =
-    `Last Modified: ${document.lastModified}`;
+document.querySelector("#lastModified").textContent =
+    `Last Modified:
+    ${document.lastModified}`;
+
+getMembers();
