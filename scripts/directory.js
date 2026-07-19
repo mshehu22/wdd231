@@ -1,31 +1,24 @@
-const membersContainer =
-    document.querySelector("#members");
+const membersContainer = document.querySelector("#members");
+const gridButton = document.querySelector("#grid");
+const listButton = document.querySelector("#list");
+const menuButton = document.querySelector("#menu");
+const navigation = document.querySelector(".navigation");
 
-const gridButton =
-    document.querySelector("#grid");
-
-const listButton =
-    document.querySelector("#list");
-
-const menuButton =
-    document.querySelector("#menu");
-
-const navigation =
-    document.querySelector(".navigation");
-
+// Mobile menu
 menuButton.addEventListener("click", () => {
     navigation.classList.toggle("open");
 });
 
+// Fetch members
 async function getMembers() {
-
     try {
+        const response = await fetch("../data/members.json");
 
-        const response =
-            await fetch("data/members.json");
+        if (!response.ok) {
+            throw new Error("Could not fetch members.");
+        }
 
-        const data =
-            await response.json();
+        const data = await response.json();
 
         console.log(data);
 
@@ -36,14 +29,14 @@ async function getMembers() {
     }
 }
 
+// Display members
 function displayMembers(members) {
 
     membersContainer.innerHTML = "";
 
     members.forEach(member => {
 
-        const card =
-            document.createElement("section");
+        const card = document.createElement("section");
 
         card.classList.add("card");
 
@@ -58,38 +51,37 @@ function displayMembers(members) {
 
             <p>${member.phone}</p>
 
-            <p>
-                Membership Level:
-                ${member.membership}
-            </p>
+            <p>Membership Level: ${member.membership}</p>
 
-            <p>
-                <a href="${member.website}"
-                   target="_blank"
-                   rel="noopener">
-                    Visit Website
-                </a>
-            </p>
+            <a href="${member.website}"
+               target="_blank"
+               rel="noopener">
+               Visit Website
+            </a>
         `;
 
         membersContainer.appendChild(card);
     });
 }
 
+// Grid view
 gridButton.addEventListener("click", () => {
     membersContainer.classList.add("grid");
     membersContainer.classList.remove("list");
 });
 
+// List view
 listButton.addEventListener("click", () => {
     membersContainer.classList.add("list");
     membersContainer.classList.remove("grid");
 });
 
+// Footer
 document.querySelector("#year").textContent =
     new Date().getFullYear();
 
 document.querySelector("#lastModified").textContent =
-    `Last Modified: ${document.lastModified}`;
+    document.lastModified;
 
+// Start
 getMembers();
