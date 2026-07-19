@@ -4,29 +4,28 @@ const listButton = document.querySelector("#list");
 const menuButton = document.querySelector("#menu");
 const navigation = document.querySelector(".navigation");
 
-// Mobile Navigation
+// Mobile Menu
 if (menuButton) {
     menuButton.addEventListener("click", () => {
         navigation.classList.toggle("open");
     });
 }
 
-// Fetch Members Data
+// Fetch Data
 async function getMembers() {
     try {
         const response = await fetch("data/members.json");
 
         if (!response.ok) {
-            throw new Error("Failed to fetch member data.");
+            throw new Error("Could not load member data.");
         }
 
         const data = await response.json();
 
-        // JSON contains { members: [...] }
         displayMembers(data.members);
 
     } catch (error) {
-        console.error("Error loading members:", error);
+        console.error(error);
     }
 }
 
@@ -44,8 +43,7 @@ function displayMembers(members) {
             <img
                 src="images/${member.image}"
                 alt="${member.name} logo"
-                loading="lazy"
-            >
+                loading="lazy">
 
             <h2>${member.name}</h2>
 
@@ -58,13 +56,12 @@ function displayMembers(members) {
                 ${member.membership}
             </p>
 
-            <p>
-                <a href="${member.website}"
-                   target="_blank"
-                   rel="noopener">
-                    Visit Website
-                </a>
-            </p>
+            <a
+                href="${member.website}"
+                target="_blank"
+                rel="noopener">
+                Visit Website
+            </a>
         `;
 
         membersContainer.appendChild(card);
@@ -72,30 +69,23 @@ function displayMembers(members) {
 }
 
 // Grid View
-if (gridButton) {
-    gridButton.addEventListener("click", () => {
-        membersContainer.className = "grid";
-    });
-}
+gridButton.addEventListener("click", () => {
+    membersContainer.classList.add("grid");
+    membersContainer.classList.remove("list");
+});
 
 // List View
-if (listButton) {
-    listButton.addEventListener("click", () => {
-        membersContainer.className = "list";
-    });
-}
+listButton.addEventListener("click", () => {
+    membersContainer.classList.add("list");
+    membersContainer.classList.remove("grid");
+});
 
-// Footer Information
-const year = document.querySelector("#year");
-if (year) {
-    year.textContent = new Date().getFullYear();
-}
+// Footer
+document.querySelector("#year").textContent =
+    new Date().getFullYear();
 
-const lastModified = document.querySelector("#lastModified");
-if (lastModified) {
-    lastModified.textContent =
-        `Last Modified: ${document.lastModified}`;
-}
+document.querySelector("#lastModified").textContent =
+    `Last Modified: ${document.lastModified}`;
 
-// Initialize Page
+// Start
 getMembers();
