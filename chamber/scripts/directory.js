@@ -1,47 +1,53 @@
-const membersContainer =
-    document.querySelector("#members");
+const membersContainer = document.querySelector("#members");
+const gridButton = document.querySelector("#grid");
+const listButton = document.querySelector("#list");
+const menuButton = document.querySelector("#menu");
+const navigation = document.querySelector(".navigation");
 
-const gridButton =
-    document.querySelector("#grid");
-
-const listButton =
-    document.querySelector("#list");
-
-const menuButton =
-    document.querySelector("#menu");
-
-const navigation =
-    document.querySelector(".navigation");
-
-menuButton.addEventListener("click", () => {
-    navigation.classList.toggle("open");
-});
-
-async function getMembers() {
-
-    const response =
-        await fetch("data/members.json");
-
-    const data =
-        await response.json();
-
-    displayMembers(data);
+// Mobile menu
+if (menuButton) {
+    menuButton.addEventListener("click", () => {
+        navigation.classList.toggle("open");
+    });
 }
 
+// Fetch members
+async function getMembers() {
+    try {
+        const response = await fetch("data/members.json");
+
+        if (!response.ok) {
+            throw new Error("Could not load members.");
+        }
+
+        const data = await response.json();
+
+        console.log(data);
+
+        // IMPORTANT
+        displayMembers(data.members);
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+// Display members
 function displayMembers(members) {
+
+    membersContainer.innerHTML = "";
 
     members.forEach(member => {
 
-        const card =
-            document.createElement("section");
-
+        const card = document.createElement("section");
         card.classList.add("card");
 
         card.innerHTML = `
-
-            <img src="${member.image}"
-                 alt="${member.name} logo"
-                 loading="lazy">
+            <img
+                src="images/${member.image}"
+                alt="${member.name} logo"
+                loading="lazy"
+            >
 
             <h2>${member.name}</h2>
 
@@ -51,13 +57,15 @@ function displayMembers(members) {
 
             <p>
                 Membership Level:
-                ${member.membershipLevel}
+                ${member.membership}
             </p>
 
-            <a href="${member.website}"
-               target="_blank"
-               rel="noopener">
-               Visit Website
+            <a
+                href="${member.website}"
+                target="_blank"
+                rel="noopener"
+            >
+                Visit Website
             </a>
         `;
 
@@ -65,21 +73,24 @@ function displayMembers(members) {
     });
 }
 
+// Grid view
 gridButton.addEventListener("click", () => {
     membersContainer.classList.add("grid");
     membersContainer.classList.remove("list");
 });
 
+// List view
 listButton.addEventListener("click", () => {
     membersContainer.classList.add("list");
     membersContainer.classList.remove("grid");
 });
 
+// Footer
 document.querySelector("#year").textContent =
     new Date().getFullYear();
 
 document.querySelector("#lastModified").textContent =
-    `Last Modified:
-    ${document.lastModified}`;
+    `Last Modified: ${document.lastModified}`;
 
+// Start app
 getMembers();
