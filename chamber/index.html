@@ -12,6 +12,7 @@
 
     <meta name="author" content="Magdalene Shehu">
 
+    <!-- Open Graph -->
     <meta property="og:title" content="Abuja Chamber of Commerce - Business Networking and Community">
 
     <meta property="og:description"
@@ -21,117 +22,199 @@
 
     <meta property="og:url" content="https://mshehu22.github.io/wdd231/chamber/index.html">
 
+    <meta property="og:type" content="website">
+
+
+    <!-- Favicon -->
     <link rel="icon" href="../favicon.ico">
 
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+
+    <!-- CSS -->
     <link rel="stylesheet" href="../styles/normalize.css">
     <link rel="stylesheet" href="styles/directory.css">
     <link rel="stylesheet" href="styles/home.css">
 
+
+    <!-- JavaScript -->
     <script src="scripts/home.js" defer></script>
     <script src="scripts/weather.js" defer></script>
     <script src="scripts/spotlight.js" defer></script>
 
 </head>
 
+
 <body>
+
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
 
     <header>
 
-        <button id="menu">☰</button>
+        <div class="brand">
+            <h1>Abuja Chamber of Commerce</h1>
+        </div>
+
+
+        <button id="menu" aria-label="Open navigation menu">
+            ☰
+        </button>
+
 
         <nav class="navigation">
-            <a class="active" href="index.html">Home</a>
-            <a href="directory.html">Directory</a>
-            <a href="discover.html">Discover</a>
-            <a href="join.html">Join</a>
+
+            <a class="active" href="index.html">
+                Home
+            </a>
+
+            <a href="directory.html">
+                Directory
+            </a>
+
+            <a href="discover.html">
+                Discover
+            </a>
+
+            <a href="join.html">
+                Join
+            </a>
+
         </nav>
 
     </header>
 
-    <main>
+
+
+    <main id="main-content">
+
 
         <!-- Hero Section -->
+
         <section class="hero">
 
-            <img src="../images/chamber.jpg" alt="Abuja Chamber of Commerce">
+            <img src="../images/chamber.jpg" alt="Abuja Chamber of Commerce building" width="1200" height="600"
+                loading="lazy">
+
 
             <div class="hero-text">
 
-                <h1>Abuja Chamber of Commerce</h1>
+                <h2>
+                    Abuja Chamber of Commerce
+                </h2>
+
 
                 <a class="cta" href="join.html">
                     Join the Chamber
                 </a>
 
+
             </div>
 
         </section>
 
-        <!-- Main Content -->
+
+
+        <!-- Events and Weather -->
+
         <div class="home-grid">
 
-            <!-- Events -->
+
             <section class="card">
 
-                <h2>Current Events</h2>
+                <h2>
+                    Current Events
+                </h2>
+
 
                 <p>
-                    <strong>Abuja Business Networking Summit 2026</strong>
+                    <strong>
+                        Abuja Business Networking Summit 2026
+                    </strong>
                 </p>
+
 
                 <p>
                     Entrepreneurship workshops, local business exhibitions,
                     and networking opportunities will take place this month.
                 </p>
 
+
             </section>
 
-            <!-- Weather -->
+
+
             <section class="card">
 
-                <h2>Weather</h2>
+
+                <h2>
+                    Weather
+                </h2>
+
 
                 <div id="current-weather">
                     Loading weather...
                 </div>
 
+
                 <div id="forecast"></div>
+
 
             </section>
 
+
         </div>
 
-        <!-- Spotlights -->
+
+
+        <!-- Member Spotlights -->
+
         <section class="spotlights">
 
-            <h2>Member Spotlights</h2>
+
+            <h2>
+                Member Spotlights
+            </h2>
+
 
             <div id="spotlight-container"></div>
 
+
         </section>
+
+
 
     </main>
 
+
+
     <footer>
+
 
         <p>
             Abuja Chamber of Commerce
         </p>
+
 
         <p>
             © <span id="year"></span>
             Magdalene Shehu
         </p>
 
+
         <p id="lastModified"></p>
 
+
     </footer>
+
 
 </body>
 
