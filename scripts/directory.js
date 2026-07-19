@@ -1,81 +1,78 @@
 const url = "data/members.json";
 
-const cards = document.querySelector("#members");
+const membersContainer = document.querySelector("#members");
+const gridButton = document.querySelector("#grid");
+const listButton = document.querySelector("#list");
 
+// Fetch members
 async function getMembers() {
+    try {
+        const response = await fetch(url);
 
-    const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error("Failed to fetch members data.");
+        }
 
-    const data = await response.json();
+        const data = await response.json();
 
-    displayMembers(data.members);
+        displayMembers(data.members);
+
+    } catch (error) {
+        console.error("Error loading members:", error);
+    }
 }
 
+// Display members
 function displayMembers(members) {
 
-    cards.innerHTML = "";
+    membersContainer.innerHTML = "";
 
     members.forEach(member => {
 
         const card = document.createElement("section");
-
         card.classList.add("card");
 
         card.innerHTML = `
-            <img
-                src="images/${member.image}"
-                alt="${member.name} logo"
-                loading="lazy"
-            >
+            <img src="${member.image}"
+                 alt="${member.name} logo"
+                 loading="lazy">
 
             <h2>${member.name}</h2>
-
             <p>${member.address}</p>
-
             <p>${member.phone}</p>
-
-            <a href="${member.website}"
-               target="_blank">
-               Visit Website
-            </a>
+            <p>
+                <a href="${member.website}" target="_blank">
+                    Visit Website
+                </a>
+            </p>
         `;
 
-        cards.appendChild(card);
+        membersContainer.appendChild(card);
     });
 }
 
+// Grid View
+gridButton.addEventListener("click", () => {
+    membersContainer.classList.add("grid");
+    membersContainer.classList.remove("list");
+});
+
+// List View
+listButton.addEventListener("click", () => {
+    membersContainer.classList.add("list");
+    membersContainer.classList.remove("grid");
+});
+
+// Footer dates
+const year = document.querySelector("#year");
+if (year) {
+    year.textContent = new Date().getFullYear();
+}
+
+const lastModified = document.querySelector("#lastModified");
+if (lastModified) {
+    lastModified.textContent = document.lastModified;
+}
+
+// Load members
 getMembers();
-
-document.querySelector("#grid").addEventListener("click", () => {
-
-    cards.classList.add("grid");
-
-    cards.classList.remove("list");
-});
-
-document.querySelector("#list").addEventListener("click", () => {
-
-    cards.classList.add("list");
-
-    cards.classList.remove("grid");
-});
-
-document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-document.getElementById("lastModified").textContent =
-    `Last Modified: ${document.lastModified}`;
-
-
-
-const menuButton =
-    document.querySelector("#menu");
-
-const navigation =
-    document.querySelector(".navigation");
-
-menuButton.addEventListener("click", () => {
-
-    navigation.classList.toggle("open");
-
-});
