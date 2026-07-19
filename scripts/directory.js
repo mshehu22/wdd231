@@ -4,24 +4,27 @@ const listButton = document.querySelector("#list");
 const menuButton = document.querySelector("#menu");
 const navigation = document.querySelector(".navigation");
 
-// Mobile menu
-menuButton.addEventListener("click", () => {
-    navigation.classList.toggle("open");
-});
+// Mobile navigation
+if (menuButton) {
+    menuButton.addEventListener("click", () => {
+        navigation.classList.toggle("open");
+    });
+}
 
-// Fetch members
+// Fetch member data
 async function getMembers() {
     try {
-        const response = await fetch("../data/members.json");
+        const response = await fetch("data/members.json");
 
         if (!response.ok) {
-            throw new Error("Could not fetch members.");
+            throw new Error("Could not fetch member data.");
         }
 
         const data = await response.json();
 
         console.log(data);
 
+        // IMPORTANT
         displayMembers(data.members);
 
     } catch (error) {
@@ -37,13 +40,14 @@ function displayMembers(members) {
     members.forEach(member => {
 
         const card = document.createElement("section");
-
         card.classList.add("card");
 
         card.innerHTML = `
-            <img src="${member.image}"
-                 alt="${member.name} logo"
-                 loading="lazy">
+            <img
+                src="images/${member.image}"
+                alt="${member.name} logo"
+                loading="lazy"
+            >
 
             <h2>${member.name}</h2>
 
@@ -51,13 +55,18 @@ function displayMembers(members) {
 
             <p>${member.phone}</p>
 
-            <p>Membership Level: ${member.membership}</p>
+            <p>
+                Membership Level:
+                ${member.membership}
+            </p>
 
-            <a href="${member.website}"
-               target="_blank"
-               rel="noopener">
-               Visit Website
-            </a>
+            <p>
+                <a href="${member.website}"
+                   target="_blank"
+                   rel="noopener">
+                    Visit Website
+                </a>
+            </p>
         `;
 
         membersContainer.appendChild(card);
@@ -65,23 +74,27 @@ function displayMembers(members) {
 }
 
 // Grid view
-gridButton.addEventListener("click", () => {
-    membersContainer.classList.add("grid");
-    membersContainer.classList.remove("list");
-});
+if (gridButton) {
+    gridButton.addEventListener("click", () => {
+        membersContainer.classList.add("grid");
+        membersContainer.classList.remove("list");
+    });
+}
 
 // List view
-listButton.addEventListener("click", () => {
-    membersContainer.classList.add("list");
-    membersContainer.classList.remove("grid");
-});
+if (listButton) {
+    listButton.addEventListener("click", () => {
+        membersContainer.classList.add("list");
+        membersContainer.classList.remove("grid");
+    });
+}
 
-// Footer
+// Footer dates
 document.querySelector("#year").textContent =
     new Date().getFullYear();
 
 document.querySelector("#lastModified").textContent =
-    document.lastModified;
+    `Last Modified: ${document.lastModified}`;
 
-// Start
+// Start app
 getMembers();
