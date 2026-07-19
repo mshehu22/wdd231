@@ -10,15 +10,17 @@ async function getMembers() {
         const response = await fetch(url);
 
         if (!response.ok) {
-            throw new Error("Failed to fetch members data.");
+            throw new Error("Could not fetch member data.");
         }
 
         const data = await response.json();
 
+        console.log(data);
+
         displayMembers(data.members);
 
     } catch (error) {
-        console.error("Error loading members:", error);
+        console.error(error);
     }
 }
 
@@ -40,30 +42,29 @@ function displayMembers(members) {
             <h2>${member.name}</h2>
             <p>${member.address}</p>
             <p>${member.phone}</p>
-            <p>
-                <a href="${member.website}" target="_blank">
-                    Visit Website
-                </a>
-            </p>
+
+            <a href="${member.website}" target="_blank">
+                Visit Website
+            </a>
         `;
 
         membersContainer.appendChild(card);
     });
 }
 
-// Grid View
+// Grid button
 gridButton.addEventListener("click", () => {
     membersContainer.classList.add("grid");
     membersContainer.classList.remove("list");
 });
 
-// List View
+// List button
 listButton.addEventListener("click", () => {
     membersContainer.classList.add("list");
     membersContainer.classList.remove("grid");
 });
 
-// Footer dates
+// Footer
 const year = document.querySelector("#year");
 if (year) {
     year.textContent = new Date().getFullYear();
@@ -74,5 +75,5 @@ if (lastModified) {
     lastModified.textContent = document.lastModified;
 }
 
-// Load members
+// Start
 getMembers();
