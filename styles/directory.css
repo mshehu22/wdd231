@@ -4,8 +4,6 @@ body {
     background: #f5f5f5;
 }
 
-/* HEADER */
-
 header,
 footer {
     background: #003366;
@@ -18,14 +16,14 @@ nav {
     background: #00509d;
 }
 
-nav ul {
+.navigation {
     display: flex;
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
-nav a {
+.navigation a {
     display: block;
     color: white;
     text-decoration: none;
@@ -37,15 +35,9 @@ nav a {
     color: black;
 }
 
-/* MAIN */
-
 main {
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 1rem;
 }
-
-/* BUTTONS */
 
 .buttons {
     text-align: center;
@@ -58,11 +50,20 @@ button {
     cursor: pointer;
 }
 
-/* GRID VIEW */
+/* GRID */
 
-.grid {
+#members.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+/* LIST */
+
+#members.list {
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
 }
 
@@ -71,7 +72,6 @@ button {
 .card {
     background: white;
     border: 1px solid #ccc;
-    border-radius: 8px;
     padding: 1rem;
     text-align: center;
 }
@@ -80,53 +80,40 @@ button {
     width: 150px;
     height: 100px;
     object-fit: contain;
-    margin-bottom: 1rem;
 }
 
-/* LIST VIEW */
-
-#members.list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-#members.list .card {
-    text-align: left;
-    padding: 1rem;
-}
-
-/* THIS HIDES THE LOGOS */
+/* THIS IS THE IMPORTANT PART */
 
 #members.list .card img {
     display: none;
 }
 
-/* FOOTER */
-
-footer {
-    margin-top: 2rem;
+#members.list .card {
+    text-align: left;
 }
 
-/* MOBILE MENU */
+/* MOBILE */
 
 #menu {
     display: none;
 }
 
-@media (max-width: 700px) {
+@media (max-width:700px) {
 
     #menu {
         display: block;
-        margin: 1rem;
     }
 
-    nav ul {
+    .navigation {
         display: none;
         flex-direction: column;
     }
 
-    nav ul.open {
+    .navigation.open {
         display: flex;
     }
+}
+
+footer {
+    margin-top: 2rem;
 }
