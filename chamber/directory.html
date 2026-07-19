@@ -5,37 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Abuja Chamber Directory | Magdalene Shehu</title>
+    <title>Chamber Directory | Magdalene Shehu</title>
 
     <meta name="description"
-        content="Explore the Abuja Chamber of Commerce directory featuring local businesses, contact information, and membership opportunities in Abuja, Nigeria.">
+        content="Abuja Chamber of Commerce directory page displaying chamber members and businesses in Abuja.">
 
     <meta name="author" content="Magdalene Shehu">
 
-    <meta property="og:title" content="Abuja Chamber of Commerce Directory">
+    <meta property="og:title" content="Abuja Chamber Directory | Magdalene Shehu">
 
     <meta property="og:description"
-        content="Discover businesses and organizations that are members of the Abuja Chamber of Commerce and connect with the local business community.">
+        content="Explore member businesses and organizations in the Abuja Chamber of Commerce Directory.">
 
-    <!-- CHANGE THIS IF chamber.jpg IS IN wdd231/images -->
     <meta property="og:image" content="https://mshehu22.github.io/wdd231/images/chamber.jpg">
 
     <meta property="og:url" content="https://mshehu22.github.io/wdd231/chamber/directory.html">
 
     <link rel="icon" href="../favicon.ico">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../styles/normalize.css">
-
-    <link rel="stylesheet" href="styles/small.css">
-
-    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="styles/directory.css">
 
     <script src="scripts/directory.js" defer></script>
 </head>
@@ -44,31 +38,18 @@
 
     <header>
 
-        <div class="logo">
-            <h2>Abuja Chamber of Commerce</h2>
-        </div>
+        <nav>
 
-        <button id="menu" aria-label="Menu">
-            ☰
-        </button>
+            <button id="menu">☰</button>
 
-        <nav class="navigation">
-
-            <a href="../index.html">
-                Home
-            </a>
-
-            <a href="directory.html" class="active">
-                Directory
-            </a>
-
-            <a href="discover.html">
-                Discover
-            </a>
-
-            <a href="join.html">
-                Join
-            </a>
+            <ul class="navigation">
+                <li><a href="../index.html">Home</a></li>
+                <li>
+                    <a class="active" href="directory.html">
+                        Directory
+                    </a>
+                </li>
+            </ul>
 
         </nav>
 
@@ -78,7 +59,7 @@
 
         <h1>Abuja Chamber of Commerce Directory</h1>
 
-        <div class="buttons">
+        <section class="buttons">
 
             <button id="grid">
                 Grid View
@@ -88,35 +69,21 @@
                 List View
             </button>
 
-        </div>
-
-        <section id="members" class="grid">
-
         </section>
+
+        <section id="members" class="grid"></section>
 
     </main>
 
     <footer>
 
         <p>
-            Abuja Chamber of Commerce
-        </p>
-
-        <p>
-            Wuse Zone 5, Abuja, Nigeria
-        </p>
-
-        <p>
-            info@abujachamber.org
-        </p>
-
-        <p>
-            +234 800 123 4567
-        </p>
-
-        <p>
-            © <span id="year"></span>
-            Magdalene Shehu | WDD 231
+            &copy;
+            <span id="year"></span>
+            |
+            Magdalene Shehu
+            |
+            WDD 231
         </p>
 
         <p id="lastModified"></p>
