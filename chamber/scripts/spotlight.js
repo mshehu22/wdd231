@@ -2,131 +2,89 @@ const spotlightContainer =
 document.querySelector("#spotlight-container");
 
 
-
 async function getSpotlights() {
-
 
     if (!spotlightContainer) return;
 
-
     try {
 
-
         const response =
-        await fetch("../data/members.json");
-
-
+            await fetch("data/members.json");
 
         if (!response.ok) {
-
-            throw new Error("Members data unavailable");
-
+            throw new Error("Unable to load member data");
         }
 
-
-
         const data =
-        await response.json();
-
-
+            await response.json();
 
         const premiumMembers =
-        data.members.filter(member =>
-            member.membership === 2 ||
-            member.membership === 3
-        );
-
-
+            data.members.filter(member =>
+                member.membership === 2 ||
+                member.membership === 3
+            );
 
         premiumMembers.sort(() =>
             Math.random() - 0.5
         );
 
-
-
-        const selected =
-        premiumMembers.slice(0,3);
-
-
+        const selectedMembers =
+            premiumMembers.slice(0, 3);
 
         spotlightContainer.innerHTML = "";
 
-
-
-        selected.forEach(member => {
-
+        selectedMembers.forEach(member => {
 
             const card =
-            document.createElement("section");
-
+                document.createElement("section");
 
             card.className =
-            "spotlight-card";
-
-
+                "spotlight-card";
 
             card.innerHTML = `
 
-            <img 
-            src="../images/${member.image}"
-            alt="${member.name} logo"
-            loading="lazy">
+                <img
+                    src="images/${member.image}"
+                    alt="${member.name} logo"
+                    loading="lazy">
 
+                <h3>${member.name}</h3>
 
-            <h3>
-            ${member.name}
-            </h3>
+                <p>${member.address}</p>
 
+                <p>${member.phone}</p>
 
-            <p>
-            ${member.address}
-            </p>
+                <p>
+                    Membership Level:
+                    ${member.membership === 3 ? "Gold" : "Silver"}
+                </p>
 
-
-            <p>
-            ${member.phone}
-            </p>
-
-
-            <p>
-            Membership Level:
-            ${member.membership === 3 ? "Gold" : "Silver"}
-            </p>
-
-
-            <a href="${member.website}"
-            target="_blank"
-            rel="noopener noreferrer">
-            Visit Website
-            </a>
+                <p>
+                    <a href="${member.website}"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Visit Website
+                    </a>
+                </p>
 
             `;
 
-
-
             spotlightContainer.appendChild(card);
-
-
 
         });
 
+    }
 
-
-    } catch(error) {
-
+    catch (error) {
 
         spotlightContainer.innerHTML =
-        "<p>Unable to load member spotlights.</p>";
-
+            "<p>Unable to load member spotlights.</p>";
 
         console.error(error);
 
-
     }
 
-
 }
-
 
 
 getSpotlights();
