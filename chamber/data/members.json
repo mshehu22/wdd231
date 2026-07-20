@@ -55,6 +55,14 @@
       "website": "https://www.airtel.com.ng",
       "image": "airtel.png",
       "membership": 2
+    },
+    {
+      "name": "Abuja Chamber of Commerce and Industry",
+      "address": "Central Business District, Abuja",
+      "phone": "+234 803 888 8888",
+      "website": "https://www.abujachamber.com",
+      "image": "abuja-chamber.jpg",
+      "membership": 3
     }
   ]
 }
