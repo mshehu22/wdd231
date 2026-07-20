@@ -1,155 +1,89 @@
-const apiKey = "9b50979de6712dbcd1c70fdf65621859";
+const apiKey = "YOUR_OPENWEATHER_API_KEY";
+const lat = 9.0765;
+const lon = 7.3986;
 
-
-const currentURL =
-    `https://api.openweathermap.org/data/2.5/weather?q=Abuja,Nigeria&units=metric&appid=${apiKey}`;
-
+const weatherURL =
+  `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
 const forecastURL =
-    `https://api.openweathermap.org/data/2.5/forecast?q=Abuja,Nigeria&units=metric&appid=${apiKey}`;
+  `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
-
-const weatherContainer = document.querySelector("#current-weather");
-const forecastContainer = document.querySelector("#forecast");
-
-
+const currentWeather = document.querySelector("#current-weather");
+const forecast = document.querySelector("#forecast");
 
 async function getWeather() {
+  try {
+    const response = await fetch(weatherURL);
 
-    if (!weatherContainer) return;
-
-
-    try {
-
-        const response = await fetch(currentURL);
-
-
-        if (!response.ok) {
-
-            throw new Error("Weather unavailable");
-
-        }
-
-
-        const data = await response.json();
-
-
-        weatherContainer.innerHTML = `
-
-            <img 
-            src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"
-            alt="${data.weather[0].description}">
-
-
-            <p>
-            <strong>
-            ${Math.round(data.main.temp)}°C
-            </strong>
-            </p>
-
-
-            <p>
-            ${data.weather[0].description}
-            </p>
-
-
-            <p>
-            Humidity: ${data.main.humidity}%
-            </p>
-
-        `;
-
-
-
-    } catch(error) {
-
-
-        weatherContainer.innerHTML =
-        "<p>Unable to load weather information.</p>";
-
-
-        console.error(error);
-
+    if (!response.ok) {
+      throw new Error("Weather request failed");
     }
 
+    const data = await response.json();
+    displayCurrentWeather(data);
+  } catch (error) {
+    currentWeather.innerHTML = `
+      <img src="images/weather.svg"
+           alt="Weather icon"
+           width="80"
+           height="80">
+      <p>Weather information unavailable.</p>
+    `;
+    console.error(error);
+  }
 }
-
-
-
-
 
 async function getForecast() {
+  try {
+    const response = await fetch(forecastURL);
 
-
-    if (!forecastContainer) return;
-
-
-    try {
-
-
-        const response = await fetch(forecastURL);
-
-
-        if (!response.ok) {
-
-            throw new Error("Forecast unavailable");
-
-        }
-
-
-        const data = await response.json();
-
-
-        const days = data.list.filter(item =>
-            item.dt_txt.includes("12:00:00")
-        );
-
-
-        forecastContainer.innerHTML =
-        "<h3>3-Day Forecast</h3>";
-
-
-
-        days.slice(0,3).forEach(day => {
-
-
-            const date = new Date(day.dt_txt);
-
-
-            forecastContainer.innerHTML += `
-
-            <p>
-            ${date.toLocaleDateString("en-US", {
-                weekday:"long"
-            })}
-            :
-            ${Math.round(day.main.temp)}°C
-            </p>
-
-            `;
-
-
-        });
-
-
-
-    } catch(error) {
-
-
-        forecastContainer.innerHTML =
-        "<p>Unable to load forecast.</p>";
-
-
-        console.error(error);
-
+    if (!response.ok) {
+      throw new Error("Forecast request failed");
     }
 
-
+    const data = await response.json();
+    displayForecast(data);
+  } catch (error) {
+    forecast.innerHTML =
+      "<p>Forecast unavailable.</p>";
+    console.error(error);
+  }
 }
 
+function displayCurrentWeather(data) {
+  currentWeather.innerHTML = `
+      <img src="images/weather.svg"
+           alt="Weather icon"
+           width="80"
+           height="80">
 
+      <p><strong>${Math.round(data.main.temp)}°C</strong></p>
 
+      <p>${data.weather[0].description}</p>
+
+      <p>Humidity: ${data.main.humidity}%</p>
+  `;
+}
+
+function displayForecast(data) {
+  forecast.innerHTML = "<h3>3-Day Forecast</h3>";
+
+  const noonForecasts = data.list.filter(item =>
+    item.dt_txt.includes("12:00:00")
+  );
+
+  noonForecasts.slice(0, 3).forEach(item => {
+    const date = new Date(item.dt_txt);
+
+    const day = date.toLocaleDateString("en-US", {
+      weekday: "long"
+    });
+
+    forecast.innerHTML += `
+      <p>${day}: ${Math.round(item.main.temp)}°C</p>
+    `;
+  });
+}
 
 getWeather();
-
 getForecast();
