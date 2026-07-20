@@ -1,156 +1,273 @@
-/* HERO SECTION */
+/* =========================
+   HERO SECTION
+========================= */
 
 .hero {
     position: relative;
+    overflow: hidden;
 }
+
 
 .hero img {
     width: 100%;
+    height: auto;
+    min-height: 300px;
     display: block;
-    max-height: 450px;
     object-fit: cover;
 }
+
 
 
 .hero-text {
     position: absolute;
     top: 50%;
-    left: 10%;
+    left: 5%;
+    right: 5%;
     transform: translateY(-50%);
+
     background-color: rgba(0, 0, 0, 0.65);
+
     color: white;
-    padding: 1.5rem;
+
+    padding: 1rem;
+
     border-radius: 10px;
-}
 
-
-.hero-text h2 {
-    margin: 0;
-    font-size: 2rem;
-}
-
-
-
-/* CALL TO ACTION BUTTON */
-
-.cta {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: .75rem 1.5rem;
-    background-color: #0056b3;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 700;
-}
-
-
-.cta:hover {
-    background-color: #003d80;
-}
-
-
-
-/* HOME CONTENT GRID */
-
-.home-grid {
-    display: grid;
-    gap: 1rem;
-    padding: 1rem;
-}
-
-
-
-/* CARDS */
-
-.card,
-.spotlight-card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 1rem;
-    background: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,.1);
-}
-
-
-.card h2,
-.spotlights h2 {
-    margin-top: 0;
-}
-
-
-
-/* SPOTLIGHT SECTION */
-
-.spotlights {
-    padding: 1rem;
-}
-
-
-#spotlight-container {
-    display: grid;
-    gap: 1rem;
-}
-
-
-.spotlight-card img {
-    max-width: 120px;
-    height: auto;
-    display: block;
-    margin: 0 auto 1rem;
-}
-
-
-.spotlight-card h3 {
     text-align: center;
 }
 
 
 
-/* WEATHER */
+.hero-text h2 {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+
+
+.hero-text p {
+    margin: .8rem 0;
+}
+
+
+
+
+
+/* =========================
+   CALL TO ACTION
+========================= */
+
+.cta {
+
+    display: inline-block;
+
+    margin-top: 1rem;
+
+    padding: .8rem 1.5rem;
+
+    background-color: #0056b3;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    font-weight: 700;
+
+}
+
+
+
+.cta:hover {
+
+    background-color: #003d80;
+
+}
+
+
+
+
+
+
+
+/* =========================
+   HOME GRID
+========================= */
+
+.home-grid {
+
+    display: grid;
+
+    gap: 1rem;
+
+    padding: 1rem;
+
+}
+
+
+
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card,
+.spotlight-card {
+
+
+    border: 1px solid #ccc;
+
+    border-radius: 10px;
+
+    padding: 1rem;
+
+    background-color: white;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,.15);
+
+}
+
+
+
+.card h2,
+.spotlights h2 {
+
+    margin-top: 0;
+
+}
+
+
+
+
+
+
+
+/* =========================
+   SPOTLIGHTS
+========================= */
+
+
+.spotlights {
+
+    padding: 1rem;
+
+}
+
+
+
+#spotlight-container {
+
+    display: grid;
+
+    gap: 1rem;
+
+}
+
+
+
+.spotlight-card {
+
+    text-align: center;
+
+}
+
+
+
+.spotlight-card img {
+
+    width: 120px;
+
+    height: 120px;
+
+    object-fit: contain;
+
+    margin-bottom: 1rem;
+
+}
+
+
+
+.spotlight-card h3 {
+
+    margin-bottom: .5rem;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   WEATHER
+========================= */
+
 
 #current-weather,
 #forecast {
-    margin-top: 0.5rem;
+
+    margin-top: .75rem;
+
+    line-height: 1.6;
+
 }
 
 
 
-/* SKIP LINK */
-
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: black;
-    color: white;
-    padding: 8px;
-    z-index: 100;
-}
-
-
-.skip-link:focus {
-    top: 0;
-}
 
 
 
-/* LARGE SCREENS */
 
-@media (min-width: 768px) {
 
-    .home-grid {
-        grid-template-columns: 1fr 1fr;
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+
+@media screen and (min-width:768px) {
+
+
+    .hero-text {
+
+        left: 10%;
+
+        right: auto;
+
+        max-width: 450px;
+
+        text-align: left;
+
+        padding: 1.5rem;
+
     }
 
-
-    #spotlight-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
 
 
     .hero-text h2 {
+
         font-size: 2.5rem;
+
     }
+
+
+
+    .home-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+
+    #spotlight-container {
+
+        grid-template-columns: repeat(3,1fr);
+
+    }
+
 
 }
