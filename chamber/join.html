@@ -1,247 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Join | Abuja Chamber of Commerce</title>
+    <title>Join | Abuja Chamber of Commerce</title>
 
-<link rel="stylesheet"
-href="styles/chamber.css">
+    <meta name="description"
+        content="Apply to join the Abuja Chamber of Commerce and explore networking, training, and business growth opportunities in Abuja.">
 
-<link rel="stylesheet"
-href="styles/join.css">
+    <meta name="author" content="Magdalene Shehu">
 
-<script src="scripts/join.js"
-defer></script>
+    <meta property="og:title" content="Join Abuja Chamber of Commerce">
+
+    <meta property="og:description"
+        content="Become a member of the Abuja Chamber of Commerce and enjoy networking, training, advertising, and business opportunities.">
+
+    <meta property="og:image" content="https://mshehu22.github.io/wdd231/chamber/images/abuja-chamber.jpg">
+
+    <meta property="og:url" content="https://mshehu22.github.io/wdd231/chamber/join.html">
+
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="../favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="stylesheet" href="styles/join.css">
+
+    <script src="scripts/join.js" defer></script>
+
 </head>
 
 <body>
 
-<header>
+    <header>
 
-<!-- Copy your existing header -->
+        <div class="brand">
+            <img src="images/chamber.jpg" alt="Abuja Chamber of Commerce Logo" width="80" height="80">
 
-</header>
+            <div>
+                <h2>Abuja Chamber</h2>
+                <p>of Commerce</p>
+            </div>
+        </div>
 
-<nav>
+        <button id="menu" aria-label="Menu" aria-expanded="false">
+            ☰
+        </button>
 
-<!-- Copy your existing navigation -->
+        <nav class="navigation">
 
-</nav>
+            <a href="index.html">Home</a>
 
-<main class="join-container">
+            <a href="directory.html">Directory</a>
 
-<section class="form-section">
+            <a href="discover.html">Discover</a>
 
-<h1>Join the Chamber</h1>
+            <a class="active" href="join.html">Join</a>
 
-<form method="get"
-action="thankyou.html">
+        </nav>
 
-<label>
-First Name
-<input
-type="text"
-name="fname"
-required
-title="First Name"
-autocomplete="given-name">
-</label>
+    </header>
 
-<label>
-Last Name
-<input
-type="text"
-name="lname"
-required
-title="Last Name"
-autocomplete="family-name">
-</label>
+    <main class="join-container">
 
-<label>
-Organizational Title
-<input
-type="text"
-name="orgtitle"
-title="Organization Title"
-autocomplete="organization-title"
-pattern="[A-Za-z\s\-]{7,}">
-</label>
+        <section class="form-section">
 
-<label>
-Email Address
-<input
-type="email"
-name="email"
-required
-title="Email"
-autocomplete="email"
-placeholder="example@email.com">
-</label>
+            <h1>Join Abuja Chamber of Commerce</h1>
 
-<label>
-Phone Number
-<input
-type="tel"
-name="phone"
-required
-title="Phone Number"
-autocomplete="tel">
-</label>
+            <form method="get" action="thankyou.html">
 
-<label>
-Business Name
-<input
-type="text"
-name="organization"
-required
-title="Business Name"
-autocomplete="organization">
-</label>
+                <label>
+                    First Name
+                    <input type="text" name="fname" title="First Name" autocomplete="given-name" required>
+                </label>
 
-<label>
-Membership Level
-<select name="membership">
+                <label>
+                    Last Name
+                    <input type="text" name="lname" title="Last Name" autocomplete="family-name" required>
+                </label>
 
-<option value="">Select One</option>
-<option value="np">
-NP Membership
-</option>
+                <label>
+                    Organizational Title
+                    <input type="text" name="orgtitle" title="Organizational Title" autocomplete="organization-title"
+                        pattern="[A-Za-z\s\-]{7,}">
+                </label>
 
-<option value="bronze">
-Bronze Membership
-</option>
+                <label>
+                    Email Address
+                    <input type="email" name="email" title="Email Address" autocomplete="email"
+                        placeholder="example@email.com" required>
+                </label>
 
-<option value="silver">
-Silver Membership
-</option>
+                <label>
+                    Mobile Phone
+                    <input type="tel" name="phone" title="Mobile Phone" autocomplete="tel" required>
+                </label>
 
-<option value="gold">
-Gold Membership
-</option>
+                <label>
+                    Business / Organization Name
+                    <input type="text" name="organization" title="Business Name" autocomplete="organization" required>
+                </label>
 
-</select>
-</label>
+                <label>
+                    Membership Level
 
-<label>
-Business Description
+                    <select name="membership" title="Membership Level" required>
 
-<textarea
-name="description"
-title="Business Description">
-</textarea>
+                        <option value="">
+                            Select Membership
+                        </option>
 
-</label>
+                        <option value="np">
+                            NP Membership
+                        </option>
 
-<input
-type="hidden"
-name="timestamp"
-id="timestamp">
+                        <option value="bronze">
+                            Bronze Membership
+                        </option>
 
-<input
-type="submit"
-value="Apply for Membership">
+                        <option value="silver">
+                            Silver Membership
+                        </option>
 
-</form>
+                        <option value="gold">
+                            Gold Membership
+                        </option>
 
-</section>
+                    </select>
 
-<section class="membership-cards">
+                </label>
 
-<div class="card">
-<h2>NP Membership</h2>
-<button id="npBtn">
-Learn More
-</button>
-</div>
+                <label>
+                    Business Description
 
-<div class="card">
-<h2>Bronze Membership</h2>
-<button id="bronzeBtn">
-Learn More
-</button>
-</div>
+                    <textarea name="description" title="Business Description">
+                    </textarea>
 
-<div class="card">
-<h2>Silver Membership</h2>
-<button id="silverBtn">
-Learn More
-</button>
-</div>
+                </label>
 
-<div class="card">
-<h2>Gold Membership</h2>
-<button id="goldBtn">
-Learn More
-</button>
-</div>
+                <input type="hidden" id="timestamp" name="timestamp">
 
-</section>
+                <input type="submit" value="Apply for Membership">
 
-</main>
+            </form>
 
-<!-- MODALS -->
+        </section>
 
-<dialog id="npModal">
-<h2>NP Membership</h2>
-<ul>
-<li>No fee</li>
-<li>Networking opportunities</li>
-<li>Training programs</li>
-</ul>
+        <section class="membership-cards">
 
-<button class="close">
-Close
-</button>
-</dialog>
+            <div class="card">
+                <h2>NP Membership</h2>
 
-<dialog id="bronzeModal">
-<h2>Bronze Membership</h2>
-<ul>
-<li>Directory listing</li>
-<li>Event invitations</li>
-<li>Business support</li>
-</ul>
+                <button id="npBtn">
+                    Learn More
+                </button>
+            </div>
 
-<button class="close">
-Close
-</button>
-</dialog>
+            <div class="card">
+                <h2>Bronze Membership</h2>
 
-<dialog id="silverModal">
-<h2>Silver Membership</h2>
-<ul>
-<li>Advertising opportunities</li>
-<li>Training discounts</li>
-<li>Featured directory position</li>
-</ul>
+                <button id="bronzeBtn">
+                    Learn More
+                </button>
+            </div>
 
-<button class="close">
-Close
-</button>
-</dialog>
+            <div class="card">
+                <h2>Silver Membership</h2>
 
-<dialog id="goldModal">
-<h2>Gold Membership</h2>
-<ul>
-<li>Homepage spotlight</li>
-<li>Premium advertising</li>
-<li>Special event discounts</li>
-<li>VIP training access</li>
-</ul>
+                <button id="silverBtn">
+                    Learn More
+                </button>
+            </div>
 
-<button class="close">
-Close
-</button>
-</dialog>
+            <div class="card">
+                <h2>Gold Membership</h2>
 
-<footer>
+                <button id="goldBtn">
+                    Learn More
+                </button>
+            </div>
 
-<!-- Copy existing footer -->
+        </section>
 
-</footer>
+    </main>
+
+    <!-- NP Modal -->
+    <dialog id="npModal">
+        <h2>NP Membership Benefits</h2>
+
+        <ul>
+            <li>No membership fee</li>
+            <li>Networking opportunities</li>
+            <li>Training workshops</li>
+        </ul>
+
+        <button class="close">
+            Close
+        </button>
+    </dialog>
+
+    <!-- Bronze Modal -->
+    <dialog id="bronzeModal">
+        <h2>Bronze Membership Benefits</h2>
+
+        <ul>
+            <li>Business directory listing</li>
+            <li>Access to chamber events</li>
+            <li>Networking opportunities</li>
+        </ul>
+
+        <button class="close">
+            Close
+        </button>
+    </dialog>
+
+    <!-- Silver Modal -->
+    <dialog id="silverModal">
+        <h2>Silver Membership Benefits</h2>
+
+        <ul>
+            <li>Featured directory listing</li>
+            <li>Training discounts</li>
+            <li>Advertising opportunities</li>
+        </ul>
+
+        <button class="close">
+            Close
+        </button>
+    </dialog>
+
+    <!-- Gold Modal -->
+    <dialog id="goldModal">
+        <h2>Gold Membership Benefits</h2>
+
+        <ul>
+            <li>Homepage spotlight advertising</li>
+            <li>Premium event discounts</li>
+            <li>VIP training opportunities</li>
+            <li>Priority chamber support</li>
+        </ul>
+
+        <button class="close">
+            Close
+        </button>
+    </dialog>
+
+    <footer>
+
+        <p>
+            Abuja Chamber of Commerce
+        </p>
+
+        <p>
+            © <span id="year"></span> Magdalene Shehu
+        </p>
+
+        <p id="lastModified"></p>
+
+    </footer>
 
 </body>
+
 </html>
