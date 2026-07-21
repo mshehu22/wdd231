@@ -26,48 +26,34 @@
     <link rel="icon" href="../favicon.ico">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../styles/normalize.css">
-    <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="stylesheet" href="styles/directory.css">
     <link rel="stylesheet" href="styles/join.css">
 
     <script src="scripts/join.js" defer></script>
-
 </head>
 
 <body>
 
     <header>
-
         <div class="brand">
             <img src="images/chamber.jpg" alt="Abuja Chamber of Commerce Logo" width="80" height="80">
-
-            <div>
-                <h2>Abuja Chamber</h2>
-                <p>of Commerce</p>
-            </div>
         </div>
 
-        <button id="menu" aria-label="Menu" aria-expanded="false">
+        <button id="menu" aria-label="Open navigation menu" aria-expanded="false">
             ☰
         </button>
 
         <nav class="navigation">
-
             <a href="index.html">Home</a>
-
             <a href="directory.html">Directory</a>
-
             <a href="discover.html">Discover</a>
-
             <a class="active" href="join.html">Join</a>
-
         </nav>
-
     </header>
 
     <main class="join-container">
@@ -80,12 +66,12 @@
 
                 <label>
                     First Name
-                    <input type="text" name="fname" title="First Name" autocomplete="given-name" required>
+                    <input type="text" name="fname" required title="First Name" autocomplete="given-name">
                 </label>
 
                 <label>
                     Last Name
-                    <input type="text" name="lname" title="Last Name" autocomplete="family-name" required>
+                    <input type="text" name="lname" required title="Last Name" autocomplete="family-name">
                 </label>
 
                 <label>
@@ -96,60 +82,41 @@
 
                 <label>
                     Email Address
-                    <input type="email" name="email" title="Email Address" autocomplete="email"
-                        placeholder="example@email.com" required>
+                    <input type="email" name="email" required title="Email Address" autocomplete="email"
+                        placeholder="example@email.com">
                 </label>
 
                 <label>
                     Mobile Phone
-                    <input type="tel" name="phone" title="Mobile Phone" autocomplete="tel" required>
+                    <input type="tel" name="phone" required title="Mobile Phone" autocomplete="tel">
                 </label>
 
                 <label>
-                    Business / Organization Name
-                    <input type="text" name="organization" title="Business Name" autocomplete="organization" required>
+                    Business/Organization Name
+                    <input type="text" name="organization" required title="Business Name" autocomplete="organization">
                 </label>
 
                 <label>
                     Membership Level
-
-                    <select name="membership" title="Membership Level" required>
-
-                        <option value="">
-                            Select Membership
-                        </option>
-
-                        <option value="np">
-                            NP Membership
-                        </option>
-
-                        <option value="bronze">
-                            Bronze Membership
-                        </option>
-
-                        <option value="silver">
-                            Silver Membership
-                        </option>
-
-                        <option value="gold">
-                            Gold Membership
-                        </option>
-
+                    <select name="membership">
+                        <option value="">Select Membership</option>
+                        <option value="np">NP Membership</option>
+                        <option value="bronze">Bronze Membership</option>
+                        <option value="silver">Silver Membership</option>
+                        <option value="gold">Gold Membership</option>
                     </select>
-
                 </label>
 
                 <label>
                     Business Description
-
-                    <textarea name="description" title="Business Description">
-                    </textarea>
-
+                    <textarea name="description" title="Business Description"></textarea>
                 </label>
 
                 <input type="hidden" id="timestamp" name="timestamp">
 
-                <input type="submit" value="Apply for Membership">
+                <button type="submit">
+                    Apply for Membership
+                </button>
 
             </form>
 
@@ -159,113 +126,76 @@
 
             <div class="card">
                 <h2>NP Membership</h2>
-
-                <button id="npBtn">
-                    Learn More
-                </button>
+                <button id="npBtn">Learn More</button>
             </div>
 
             <div class="card">
                 <h2>Bronze Membership</h2>
-
-                <button id="bronzeBtn">
-                    Learn More
-                </button>
+                <button id="bronzeBtn">Learn More</button>
             </div>
 
             <div class="card">
                 <h2>Silver Membership</h2>
-
-                <button id="silverBtn">
-                    Learn More
-                </button>
+                <button id="silverBtn">Learn More</button>
             </div>
 
             <div class="card">
                 <h2>Gold Membership</h2>
-
-                <button id="goldBtn">
-                    Learn More
-                </button>
+                <button id="goldBtn">Learn More</button>
             </div>
 
         </section>
 
     </main>
 
-    <!-- NP Modal -->
     <dialog id="npModal">
         <h2>NP Membership Benefits</h2>
-
         <ul>
             <li>No membership fee</li>
             <li>Networking opportunities</li>
-            <li>Training workshops</li>
+            <li>Training programs</li>
         </ul>
-
-        <button class="close">
-            Close
-        </button>
+        <button class="close">Close</button>
     </dialog>
 
-    <!-- Bronze Modal -->
     <dialog id="bronzeModal">
         <h2>Bronze Membership Benefits</h2>
-
         <ul>
             <li>Business directory listing</li>
-            <li>Access to chamber events</li>
-            <li>Networking opportunities</li>
+            <li>Networking events</li>
+            <li>Community partnerships</li>
         </ul>
-
-        <button class="close">
-            Close
-        </button>
+        <button class="close">Close</button>
     </dialog>
 
-    <!-- Silver Modal -->
     <dialog id="silverModal">
         <h2>Silver Membership Benefits</h2>
-
         <ul>
             <li>Featured directory listing</li>
-            <li>Training discounts</li>
             <li>Advertising opportunities</li>
+            <li>Training discounts</li>
         </ul>
-
-        <button class="close">
-            Close
-        </button>
+        <button class="close">Close</button>
     </dialog>
 
-    <!-- Gold Modal -->
     <dialog id="goldModal">
         <h2>Gold Membership Benefits</h2>
-
         <ul>
             <li>Homepage spotlight advertising</li>
-            <li>Premium event discounts</li>
+            <li>Premium business promotion</li>
+            <li>Special event discounts</li>
             <li>VIP training opportunities</li>
-            <li>Priority chamber support</li>
         </ul>
-
-        <button class="close">
-            Close
-        </button>
+        <button class="close">Close</button>
     </dialog>
 
     <footer>
-
+        <p>Abuja Chamber of Commerce</p>
         <p>
-            Abuja Chamber of Commerce
+            © <span id="year"></span>
+            Magdalene Shehu
         </p>
-
-        <p>
-            © <span id="year"></span> Magdalene Shehu
-        </p>
-
         <p id="lastModified"></p>
-
     </footer>
 
 </body>
