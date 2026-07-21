@@ -1,15 +1,59 @@
+```css
+body {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+}
+
+header,
+footer {
+    background: #003366;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+nav {
+    background: #00509d;
+}
+
+.navigation {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+.navigation a.active {
+    background: gold;
+    color: black;
+}
+
+#menu {
+    display: none;
+}
+
+main {
+    padding: 1rem;
+}
+
 .join-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
-    padding: 2rem;
 }
 
 .form-section {
-    background-color: #ffffff;
+    background: white;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
 }
 
 form {
@@ -27,9 +71,9 @@ label {
 input,
 select,
 textarea {
-    padding: 0.75rem;
-    margin-top: 0.4rem;
-    border: 1px solid #cccccc;
+    padding: .75rem;
+    margin-top: .4rem;
+    border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 1rem;
 }
@@ -40,17 +84,17 @@ textarea {
 }
 
 button[type="submit"] {
-    background-color: #003366;
-    color: #ffffff;
+    background: #003366;
+    color: white;
     border: none;
     padding: 1rem;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 1rem;
 }
 
-button[type="submit"]:hover {
-    background-color: #00509d;
+button[type="submit"]:hover,
+.card button:hover {
+    background: #00509d;
 }
 
 .membership-cards {
@@ -59,41 +103,36 @@ button[type="submit"]:hover {
 }
 
 .card {
-    background-color: #ffffff;
+    background: white;
     padding: 1.5rem;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
     opacity: 0;
     transform: translateY(40px);
     animation: fadeUp 1s forwards;
 }
 
 .card:nth-child(2) {
-    animation-delay: 0.2s;
+    animation-delay: .2s;
 }
 
 .card:nth-child(3) {
-    animation-delay: 0.4s;
+    animation-delay: .4s;
 }
 
 .card:nth-child(4) {
-    animation-delay: 0.6s;
+    animation-delay: .6s;
 }
 
 .card button {
     margin-top: 1rem;
-    background-color: #003366;
-    color: #ffffff;
+    background: #003366;
+    color: white;
     border: none;
-    padding: 0.75rem 1rem;
+    padding: .75rem 1rem;
     border-radius: 6px;
     cursor: pointer;
-}
-
-.card button:hover {
-    background-color: #00509d;
 }
 
 @keyframes fadeUp {
@@ -111,32 +150,36 @@ dialog {
 }
 
 dialog::backdrop {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0,0,0,.5);
 }
 
 dialog button {
-    background-color: #003366;
-    color: #ffffff;
+    background: #003366;
+    color: white;
     border: none;
-    padding: 0.75rem 1rem;
+    padding: .75rem 1rem;
     border-radius: 6px;
     cursor: pointer;
 }
 
 footer {
-    text-align: center;
-    padding: 1rem;
     margin-top: 2rem;
 }
 
-/* Fix active navigation contrast */
-.navigation a.active {
-    background-color: gold;
-    color: #000000;
-}
+@media (max-width:700px) {
+    #menu {
+        display: block;
+    }
 
-/* Mobile */
-@media (max-width: 768px) {
+    .navigation {
+        display: none;
+        flex-direction: column;
+    }
+
+    .navigation.open {
+        display: flex;
+    }
+
     .join-container {
         display: block;
     }
@@ -145,3 +188,4 @@ footer {
         margin-top: 2rem;
     }
 }
+```

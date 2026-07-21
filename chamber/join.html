@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +32,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../styles/normalize.css">
-    <link rel="stylesheet" href="styles/directory.css">
     <link rel="stylesheet" href="styles/join.css">
 
     <script src="scripts/join.js" defer></script>
@@ -64,63 +64,36 @@
 
             <form method="get" action="thankyou.html">
 
-                <label for="fname">
-                    First Name
-                </label>
+                <label for="fname">First Name</label>
                 <input id="fname" type="text" name="fname" required title="First Name" autocomplete="given-name">
 
-                <label for="lname">
-                    Last Name
-                </label>
+                <label for="lname">Last Name</label>
                 <input id="lname" type="text" name="lname" required title="Last Name" autocomplete="family-name">
 
-                <label for="orgtitle">
-                    Organizational Title
-                </label>
+                <label for="orgtitle">Organizational Title</label>
                 <input id="orgtitle" type="text" name="orgtitle" title="Organization Title"
                     autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}">
 
-                <label for="email">
-                    Email Address
-                </label>
+                <label for="email">Email Address</label>
                 <input id="email" type="email" name="email" required title="Email Address" autocomplete="email"
                     placeholder="example@email.com">
 
-                <label for="phone">
-                    Mobile Phone
-                </label>
+                <label for="phone">Mobile Phone</label>
                 <input id="phone" type="tel" name="phone" required title="Phone Number" autocomplete="tel">
 
-                <label for="organization">
-                    Business Name
-                </label>
+                <label for="organization">Business Name</label>
                 <input id="organization" type="text" name="organization" required title="Business Name"
                     autocomplete="organization">
 
-                <label for="membership">
-                    Membership Level
-                </label>
+                <label for="membership">Membership Level</label>
+
                 <select id="membership" name="membership" required>
 
-                    <option value="">
-                        Select Membership
-                    </option>
-
-                    <option value="np">
-                        NP Membership
-                    </option>
-
-                    <option value="bronze">
-                        Bronze Membership
-                    </option>
-
-                    <option value="silver">
-                        Silver Membership
-                    </option>
-
-                    <option value="gold">
-                        Gold Membership
-                    </option>
+                    <option value="">Select Membership</option>
+                    <option value="np">NP Membership</option>
+                    <option value="bronze">Bronze Membership</option>
+                    <option value="silver">Silver Membership</option>
+                    <option value="gold">Gold Membership</option>
 
                 </select>
 
@@ -128,7 +101,8 @@
                     Business Description
                 </label>
 
-                <textarea id="description" name="description" title="Business Description"></textarea>
+                <textarea id="description" name="description" title="Business Description">
+                </textarea>
 
                 <input type="hidden" id="timestamp" name="timestamp">
 
@@ -175,3 +149,4 @@
 </body>
 
 </html>
+```
