@@ -64,25 +64,24 @@
             <form method="get" action="thankyou.html">
 
                 <label for="fname">First Name</label>
-                <input id="fname" type="text" name="fname" required title="First Name" autocomplete="given-name">
+                <input id="fname" type="text" name="fname" required autocomplete="given-name">
 
                 <label for="lname">Last Name</label>
-                <input id="lname" type="text" name="lname" required title="Last Name" autocomplete="family-name">
+                <input id="lname" type="text" name="lname" required autocomplete="family-name">
 
                 <label for="orgtitle">Organizational Title</label>
-                <input id="orgtitle" type="text" name="orgtitle" title="Organization Title"
-                    autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}">
+                <input id="orgtitle" type="text" name="orgtitle" autocomplete="organization-title"
+                    pattern="[A-Za-z\s\-]{7,}">
 
                 <label for="email">Email Address</label>
-                <input id="email" type="email" name="email" required title="Email Address" autocomplete="email"
+                <input id="email" type="email" name="email" required autocomplete="email"
                     placeholder="example@email.com">
 
                 <label for="phone">Mobile Phone</label>
-                <input id="phone" type="tel" name="phone" required title="Phone Number" autocomplete="tel">
+                <input id="phone" type="tel" name="phone" required autocomplete="tel">
 
                 <label for="organization">Business Name</label>
-                <input id="organization" type="text" name="organization" required title="Business Name"
-                    autocomplete="organization">
+                <input id="organization" type="text" name="organization" required autocomplete="organization">
 
                 <label for="membership">Membership Level</label>
 
@@ -96,9 +95,11 @@
 
                 </select>
 
-                <label for="description">Business Description</label>
+                <label for="description">
+                    Business Description
+                </label>
 
-                <textarea id="description" name="description" title="Business Description"></textarea>
+                <textarea id="description" name="description"></textarea>
 
                 <input type="hidden" id="timestamp" name="timestamp">
 
@@ -114,22 +115,30 @@
 
             <div class="card">
                 <h2>NP Membership</h2>
-                <button id="npBtn" type="button">Learn More</button>
+                <button type="button" id="npBtn">
+                    Learn More
+                </button>
             </div>
 
             <div class="card">
                 <h2>Bronze Membership</h2>
-                <button id="bronzeBtn" type="button">Learn More</button>
+                <button type="button" id="bronzeBtn">
+                    Learn More
+                </button>
             </div>
 
             <div class="card">
                 <h2>Silver Membership</h2>
-                <button id="silverBtn" type="button">Learn More</button>
+                <button type="button" id="silverBtn">
+                    Learn More
+                </button>
             </div>
 
             <div class="card">
                 <h2>Gold Membership</h2>
-                <button id="goldBtn" type="button">Learn More</button>
+                <button type="button" id="goldBtn">
+                    Learn More
+                </button>
             </div>
 
         </section>
@@ -145,4 +154,3 @@
 </body>
 
 </html>
-```
