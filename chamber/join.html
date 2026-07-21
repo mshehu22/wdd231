@@ -12,11 +12,15 @@
 
     <meta name="author" content="Magdalene Shehu">
 
-    <meta property="og:title" content="Join Abuja Chamber of Commerce">
+    <meta property="og:title" content="Join the Abuja Chamber of Commerce Today">
+
     <meta property="og:description"
-        content="Become a member of the Abuja Chamber of Commerce and enjoy networking and business opportunities.">
+        content="Become a member of the Abuja Chamber of Commerce to access networking opportunities, business training, and community partnerships in Abuja.">
+
     <meta property="og:image" content="https://mshehu22.github.io/wdd231/chamber/images/abuja-chamber.jpg">
+
     <meta property="og:url" content="https://mshehu22.github.io/wdd231/chamber/join.html">
+
     <meta property="og:type" content="website">
 
     <link rel="icon" href="../favicon.ico">
@@ -40,7 +44,9 @@
             <img src="images/chamber.jpg" alt="Abuja Chamber of Commerce Logo" width="80" height="80">
         </div>
 
-        <button id="menu">☰</button>
+        <button id="menu" aria-label="Open Navigation Menu">
+            ☰
+        </button>
 
         <nav class="navigation">
             <a href="index.html">Home</a>
@@ -58,54 +64,71 @@
 
             <form method="get" action="thankyou.html">
 
-                <label>
+                <label for="fname">
                     First Name
-                    <input type="text" name="fname" required title="First Name" autocomplete="given-name">
                 </label>
+                <input id="fname" type="text" name="fname" required title="First Name" autocomplete="given-name">
 
-                <label>
+                <label for="lname">
                     Last Name
-                    <input type="text" name="lname" required title="Last Name" autocomplete="family-name">
                 </label>
+                <input id="lname" type="text" name="lname" required title="Last Name" autocomplete="family-name">
 
-                <label>
+                <label for="orgtitle">
                     Organizational Title
-                    <input type="text" name="orgtitle" title="Organization Title" autocomplete="organization-title"
-                        pattern="[A-Za-z\\s\\-]{7,}">
                 </label>
+                <input id="orgtitle" type="text" name="orgtitle" title="Organization Title"
+                    autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}">
 
-                <label>
+                <label for="email">
                     Email Address
-                    <input type="email" name="email" required title="Email Address" autocomplete="email"
-                        placeholder="example@email.com">
                 </label>
+                <input id="email" type="email" name="email" required title="Email Address" autocomplete="email"
+                    placeholder="example@email.com">
 
-                <label>
+                <label for="phone">
                     Mobile Phone
-                    <input type="tel" name="phone" required title="Phone Number" autocomplete="tel">
                 </label>
+                <input id="phone" type="tel" name="phone" required title="Phone Number" autocomplete="tel">
 
-                <label>
+                <label for="organization">
                     Business Name
-                    <input type="text" name="organization" required title="Business Name" autocomplete="organization">
                 </label>
+                <input id="organization" type="text" name="organization" required title="Business Name"
+                    autocomplete="organization">
 
-                <label>
+                <label for="membership">
                     Membership Level
-                    <select name="membership">
-                        <option value="">Select Membership</option>
-                        <option value="np">NP Membership</option>
-                        <option value="bronze">Bronze Membership</option>
-                        <option value="silver">Silver Membership</option>
-                        <option value="gold">Gold Membership</option>
-                    </select>
+                </label>
+                <select id="membership" name="membership" required>
+
+                    <option value="">
+                        Select Membership
+                    </option>
+
+                    <option value="np">
+                        NP Membership
+                    </option>
+
+                    <option value="bronze">
+                        Bronze Membership
+                    </option>
+
+                    <option value="silver">
+                        Silver Membership
+                    </option>
+
+                    <option value="gold">
+                        Gold Membership
+                    </option>
+
+                </select>
+
+                <label for="description">
+                    Business Description
                 </label>
 
-                <label>
-                    Business Description
-                    <textarea name="description" title="Business Description">
-                </textarea>
-                </label>
+                <textarea id="description" name="description" title="Business Description"></textarea>
 
                 <input type="hidden" id="timestamp" name="timestamp">
 
