@@ -1,43 +1,32 @@
+// Hidden timestamp
 document.querySelector("#timestamp").value =
 new Date().toISOString();
 
-const npModal =
-document.querySelector("#npModal");
+// Footer year
+document.querySelector("#year").textContent =
+new Date().getFullYear();
 
-const bronzeModal =
-document.querySelector("#bronzeModal");
+document.querySelector("#lastModified").textContent =
+`Last Modification: ${document.lastModified}`;
 
-const silverModal =
-document.querySelector("#silverModal");
+// Modal buttons
+const modals = [
+    ["npBtn", "npModal"],
+    ["bronzeBtn", "bronzeModal"],
+    ["silverBtn", "silverModal"],
+    ["goldBtn", "goldModal"]
+];
 
-const goldModal =
-document.querySelector("#goldModal");
+modals.forEach(([buttonId, modalId]) => {
+    const button = document.querySelector(`#${buttonId}`);
+    const modal = document.querySelector(`#${modalId}`);
 
-document.querySelector("#npBtn")
-.addEventListener("click", () => {
-    npModal.showModal();
-});
+    button.addEventListener("click", () => {
+        modal.showModal();
+    });
 
-document.querySelector("#bronzeBtn")
-.addEventListener("click", () => {
-    bronzeModal.showModal();
-});
-
-document.querySelector("#silverBtn")
-.addEventListener("click", () => {
-    silverModal.showModal();
-});
-
-document.querySelector("#goldBtn")
-.addEventListener("click", () => {
-    goldModal.showModal();
-});
-
-document.querySelectorAll(".close")
-.forEach(button => {
-
-button.addEventListener("click", () => {
-    button.parentElement.close();
-});
-
+    modal.querySelector(".close")
+        .addEventListener("click", () => {
+            modal.close();
+        });
 });
