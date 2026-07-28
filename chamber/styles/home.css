@@ -1,17 +1,18 @@
-/* =========================
+/* ==========================
    HERO SECTION
-========================= */
+========================== */
 
 .hero {
     position: relative;
     overflow: hidden;
+    border-radius: 10px;
 }
 
 .hero img {
+    display: block;
     width: 100%;
     height: auto;
     min-height: 300px;
-    display: block;
     object-fit: cover;
 }
 
@@ -21,88 +22,109 @@
     left: 5%;
     right: 5%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.65);
-    color: white;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
     padding: 1rem;
     border-radius: 10px;
     text-align: center;
+    max-width: 90%;
 }
 
 .hero-text h2 {
-    margin: 0;
-    font-size: 1.6rem;
+    margin-bottom: .75rem;
+    font-size: 1.8rem;
 }
 
 .hero-text p {
-    margin: .8rem 0;
+    margin-bottom: 1rem;
+    line-height: 1.5;
 }
 
-
-
-/* =========================
+/* ==========================
    CALL TO ACTION
-========================= */
+========================== */
 
 .cta {
     display: inline-block;
-    margin-top: 1rem;
     padding: .8rem 1.5rem;
-    background-color: #0056b3;
-    color: white;
+    background: #0056b3;
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
     font-weight: 700;
+    transition: background-color .3s ease,
+        transform .2s ease;
 }
 
-.cta:hover {
-    background-color: #003d80;
+.cta:hover,
+.cta:focus {
+    background: #003d80;
+    transform: translateY(-2px);
 }
 
-
-
-/* =========================
+/* ==========================
    HOME GRID
-========================= */
+========================== */
 
 .home-grid {
     display: grid;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 1.5rem;
+    margin: 2rem 0;
 }
 
-
-
-/* =========================
+/* ==========================
    CARDS
-========================= */
+========================== */
 
 .card,
 .spotlight-card {
+    background: #fff;
     border: 1px solid #ccc;
     border-radius: 10px;
-    padding: 1rem;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,.15);
+    padding: 1.25rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+    height: 100%;
 }
 
 .card h2,
 .spotlights h2 {
-    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
+.card h3 {
+    margin-bottom: .75rem;
+}
 
+.card p {
+    line-height: 1.6;
+}
 
-/* =========================
+/* ==========================
+   WEATHER
+========================== */
+
+#current-weather,
+#forecast {
+    margin-top: .75rem;
+    line-height: 1.6;
+}
+
+#current-weather img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* ==========================
    SPOTLIGHTS
-========================= */
+========================== */
 
 .spotlights {
-    padding: 1rem;
+    margin-top: 2rem;
 }
 
 #spotlight-container {
     display: grid;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .spotlight-card {
@@ -113,56 +135,55 @@
     width: 120px;
     height: 120px;
     object-fit: contain;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem;
+    display: block;
 }
 
 .spotlight-card h3 {
     margin-bottom: .5rem;
 }
 
-
-
-/* =========================
-   WEATHER
-========================= */
-
-#current-weather,
-#forecast {
-    margin-top: .75rem;
-    line-height: 1.6;
+.spotlight-card p {
+    margin-bottom: .5rem;
+    line-height: 1.5;
 }
 
+.spotlight-card a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
 
+.spotlight-card a:hover {
+    text-decoration: underline;
+}
 
-/* =========================
+/* ==========================
    PAGE TITLE
-========================= */
+========================== */
 
 .page-title {
-    display: none;
+    position: absolute;
+    left: -9999px;
 }
 
-
-
-/* =========================
+/* ==========================
    ACTIVE NAVIGATION
-========================= */
+========================== */
 
 .navigation a.active {
-    background-color: gold;
-    color: black;
+    background: gold;
+    color: #000;
 }
 
+/* ==========================
+   DESKTOP
+========================== */
 
-
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
-
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
 
     .hero-text {
-        left: 10%;
+        left: 8%;
         right: auto;
         max-width: 450px;
         text-align: left;
@@ -174,10 +195,35 @@
     }
 
     .home-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     #spotlight-container {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media screen and (max-width: 767px) {
+
+    .hero-text {
+        position: absolute;
+        left: 5%;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+    }
+
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .home-grid,
+    #spotlight-container {
+        grid-template-columns: 1fr;
     }
 }
