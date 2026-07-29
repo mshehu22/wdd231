@@ -73,29 +73,19 @@
 }
 
 /* ==========================
-   CARDS
+   HOME CARD SPACING ONLY
 ========================== */
 
-.card,
-.spotlight-card {
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 1.25rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
-    height: 100%;
-}
-
-.card h2,
+.home-grid .card h2,
 .spotlights h2 {
     margin-bottom: 1rem;
 }
 
-.card h3 {
+.home-grid .card h3 {
     margin-bottom: .75rem;
 }
 
-.card p {
+.home-grid .card p {
     line-height: 1.6;
 }
 
@@ -128,7 +118,13 @@
 }
 
 .spotlight-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,.15);
     text-align: center;
+    height: 100%;
 }
 
 .spotlight-card img {
