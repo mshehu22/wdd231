@@ -1,6 +1,12 @@
-const spotlightContainer =
-document.querySelector("#spotlight-container");
+// ==========================
+// Spotlight Container
+// ==========================
 
+const spotlightContainer = document.querySelector("#spotlight-container");
+
+// ==========================
+// Load Spotlights
+// ==========================
 
 async function getSpotlights() {
 
@@ -8,45 +14,41 @@ async function getSpotlights() {
 
     try {
 
-        const response =
-            await fetch("data/members.json");
+        const response = await fetch("data/members.json");
 
         if (!response.ok) {
-            throw new Error("Unable to load member data");
+            throw new Error("Unable to load member data.");
         }
 
-        const data =
-            await response.json();
+        const data = await response.json();
 
-        const premiumMembers =
-            data.members.filter(member =>
-                member.membership === 2 ||
-                member.membership === 3
-            );
-
-        premiumMembers.sort(() =>
-            Math.random() - 0.5
+        const premiumMembers = data.members.filter(member =>
+            member.membership === 2 || member.membership === 3
         );
 
-        const selectedMembers =
-            premiumMembers.slice(0, 3);
+        // Randomize members
+        premiumMembers.sort(() => Math.random() - 0.5);
+
+        // Select up to three members
+        const selectedMembers = premiumMembers.slice(0, 3);
 
         spotlightContainer.innerHTML = "";
 
         selectedMembers.forEach(member => {
 
-            const card =
-                document.createElement("section");
+            const card = document.createElement("section");
+            card.classList.add("spotlight-card");
 
-            card.className =
-                "spotlight-card";
+            const membershipLevel =
+                member.membership === 3 ? "Gold" : "Silver";
 
             card.innerHTML = `
-
                 <img
                     src="images/${member.image}"
                     alt="${member.name} logo"
-                    loading="lazy">
+                    loading="lazy"
+                    width="120"
+                    height="120">
 
                 <h3>${member.name}</h3>
 
@@ -54,10 +56,7 @@ async function getSpotlights() {
 
                 <p>${member.phone}</p>
 
-                <p>
-                    Membership Level:
-                    ${member.membership === 3 ? "Gold" : "Silver"}
-                </p>
+                <p><strong>${membershipLevel} Member</strong></p>
 
                 <p>
                     <a href="${member.website}"
@@ -66,16 +65,13 @@ async function getSpotlights() {
                         Visit Website
                     </a>
                 </p>
-
             `;
 
             spotlightContainer.appendChild(card);
 
         });
 
-    }
-
-    catch (error) {
+    } catch (error) {
 
         spotlightContainer.innerHTML =
             "<p>Unable to load member spotlights.</p>";
@@ -86,5 +82,8 @@ async function getSpotlights() {
 
 }
 
+// ==========================
+// Initialize
+// ==========================
 
 getSpotlights();
