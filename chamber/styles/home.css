@@ -154,7 +154,8 @@
     font-weight: bold;
 }
 
-.spotlight-card a:hover {
+.spotlight-card a:hover,
+.spotlight-card a:focus {
     text-decoration: underline;
 }
 
