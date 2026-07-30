@@ -5,13 +5,13 @@ const menuButton = document.querySelector("#menu");
 const navigation = document.querySelector(".navigation");
 
 // Mobile Menu
-if (menuButton) {
+if (menuButton && navigation) {
     menuButton.addEventListener("click", () => {
         navigation.classList.toggle("open");
     });
 }
 
-// Fetch Data
+// Fetch Member Data
 async function getMembers() {
     try {
         const response = await fetch("data/members.json");
@@ -21,11 +21,10 @@ async function getMembers() {
         }
 
         const data = await response.json();
-
         displayMembers(data.members);
 
     } catch (error) {
-        console.error(error);
+        console.error("Error loading member data:", error);
     }
 }
 
@@ -51,10 +50,7 @@ function displayMembers(members) {
 
             <p>${member.phone}</p>
 
-            <p>
-                Membership Level:
-                ${member.membership}
-            </p>
+            <p><strong>Membership Level:</strong> ${member.membership}</p>
 
             <a
                 href="${member.website}"
@@ -69,23 +65,31 @@ function displayMembers(members) {
 }
 
 // Grid View
-gridButton.addEventListener("click", () => {
-    membersContainer.classList.add("grid");
-    membersContainer.classList.remove("list");
-});
+if (gridButton) {
+    gridButton.addEventListener("click", () => {
+        membersContainer.classList.add("grid");
+        membersContainer.classList.remove("list");
+    });
+}
 
 // List View
-listButton.addEventListener("click", () => {
-    membersContainer.classList.add("list");
-    membersContainer.classList.remove("grid");
-});
+if (listButton) {
+    listButton.addEventListener("click", () => {
+        membersContainer.classList.add("list");
+        membersContainer.classList.remove("grid");
+    });
+}
 
 // Footer
-document.querySelector("#year").textContent =
-    new Date().getFullYear();
+const year = document.querySelector("#year");
+if (year) {
+    year.textContent = new Date().getFullYear();
+}
 
-document.querySelector("#lastModified").textContent =
-    `Last Modified: ${document.lastModified}`;
+const lastModified = document.querySelector("#lastModified");
+if (lastModified) {
+    lastModified.textContent = `Last Modified: ${document.lastModified}`;
+}
 
 // Start
 getMembers();

@@ -1,15 +1,14 @@
 // Hidden timestamp
-document.querySelector("#timestamp").value =
-new Date().toISOString();
+document.querySelector("#timestamp").value = new Date().toISOString();
 
 // Footer year
-document.querySelector("#year").textContent =
-new Date().getFullYear();
+document.querySelector("#year").textContent = new Date().getFullYear();
 
+// Last modified
 document.querySelector("#lastModified").textContent =
-`Last Modification: ${document.lastModified}`;
+`Last Modified: ${document.lastModified}`;
 
-// Modal buttons
+// Membership dialogs
 const modals = [
     ["npBtn", "npModal"],
     ["bronzeBtn", "bronzeModal"],
@@ -21,12 +20,13 @@ modals.forEach(([buttonId, modalId]) => {
     const button = document.querySelector(`#${buttonId}`);
     const modal = document.querySelector(`#${modalId}`);
 
-    button.addEventListener("click", () => {
-        modal.showModal();
-    });
+    if (button && modal) {
+        button.addEventListener("click", () => {
+            modal.showModal();
+        });
 
-    modal.querySelector(".close")
-        .addEventListener("click", () => {
+        modal.querySelector(".close").addEventListener("click", () => {
             modal.close();
         });
+    }
 });
