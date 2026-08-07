@@ -9,9 +9,25 @@
 
     <title>Masa Delight Abuja | Thank You</title>
 
-    <meta name="description" content="Thank you for placing your order with Masa Delight Abuja.">
+    <meta name="description"
+        content="Thank you for your order. Your Masa Delight Abuja order has been received successfully and will be confirmed shortly.">
 
     <meta name="author" content="Magdalene Shehu">
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Thank You for Your Order | Masa Delight Abuja">
+
+    <meta property="og:description"
+        content="Your order has been received successfully. We will contact you shortly to confirm your order.">
+
+    <meta property="og:image" content="https://mshehu22.github.io/wdd231/final/images/hero.jpg">
+
+    <meta property="og:url" content="https://mshehu22.github.io/wdd231/final/thanks.html">
+
+    <meta property="og:site_name" content="Masa Delight Abuja">
+
+    <meta property="og:type" content="website">
 
     <link rel="icon" href="images/logo.png" type="image/png">
 
@@ -27,11 +43,14 @@
 
     <link rel="stylesheet" href="styles/larger.css">
 
-    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/navigation.js" defer>
+    </script>
 
-    <script src="scripts/date.js" defer></script>
+    <script src="scripts/date.js" defer>
+    </script>
 
-    <script type="module" src="scripts/thankyou.js"></script>
+    <script type="module" src="scripts/thankyou.js">
+    </script>
 
 </head>
 
@@ -45,15 +64,15 @@
 
             <div>
 
-                <h1>
+                <p class="site-name">
 
                     Masa Delight Abuja
 
-                </h1>
+                </p>
 
                 <p>
 
-                    Authentic Northern Nigerian Breakfast & Catering
+                    Authentic Northern Nigerian Breakfast &amp; Catering
 
                 </p>
 
@@ -93,16 +112,23 @@
 
     <main>
 
+        <h1>
+
+            Thank You for Your Order
+
+        </h1>
+
         <section class="page-banner">
 
             <h2>
 
-                Thank You!
+                Order Received Successfully
 
             </h2>
 
             <p>
 
+                Thank you for choosing Masa Delight Abuja.
                 Your order has been received successfully.
 
             </p>
@@ -119,19 +145,26 @@
 
             <div id="orderSummary">
 
-                <!-- JavaScript inserts submitted data here -->
+                <!-- Submitted order information is displayed by JavaScript -->
 
             </div>
 
             <p>
 
-                We will contact you shortly to confirm your order.
+                We will contact you shortly to confirm your order
+                and arrange the requested service.
 
             </p>
 
             <a href="index.html" class="button">
 
                 Return Home
+
+            </a>
+
+            <a href="order.html" class="button">
+
+                Place Another Order
 
             </a>
 
@@ -144,9 +177,7 @@
         <p>
 
             &copy;
-
             <span id="year"></span>
-
             Masa Delight Abuja
 
         </p>
@@ -160,6 +191,13 @@
         <p>
 
             Created by Magdalene Shehu
+
+        </p>
+
+        <p>
+
+            Last Modified:
+            <span id="lastModified"></span>
 
         </p>
 
@@ -180,14 +218,6 @@
                 Project Demonstration Video
 
             </a>
-
-        </p>
-
-        <p>
-
-            Last Modified:
-
-            <span id="lastModified"></span>
 
         </p>
 
