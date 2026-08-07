@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Masa Delight Abuja | Menu</title>
@@ -24,27 +23,26 @@
     <meta property="og:url" content="https://mshehu22.github.io/wdd231/final/menu.html">
 
     <meta property="og:site_name" content="Masa Delight Abuja">
-
     <meta property="og:type" content="website">
 
+    <!-- Favicon -->
     <link rel="icon" href="images/logo.png" type="image/png">
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/base.css">
-
     <link rel="stylesheet" href="styles/larger.css">
 
+    <!-- JavaScript -->
     <script src="scripts/navigation.js" defer></script>
-
     <script src="scripts/date.js" defer></script>
-
     <script type="module" src="scripts/menu.js"></script>
 </head>
 
@@ -70,7 +68,8 @@
 
         </div>
 
-        <button id="menuButton" aria-label="Toggle Navigation" aria-controls="navigation" aria-expanded="false">
+        <button id="menuButton" type="button" aria-label="Toggle Navigation" aria-controls="navigation"
+            aria-expanded="false">
 
             ☰
 
@@ -94,8 +93,10 @@
 
     </header>
 
+
     <main>
 
+        <!-- Page Banner -->
         <section class="page-banner">
 
             <img src="images/masa.jpg" alt="Traditional Nigerian masa meal" width="1200" height="600" loading="eager">
@@ -107,15 +108,17 @@
                 </h1>
 
                 <p>
-                    Enjoy freshly prepared traditional Northern Nigerian meals,
-                    breakfast combinations, soups, grilled meats, and catering
-                    options.
+                    Enjoy freshly prepared traditional Northern Nigerian
+                    meals, breakfast combinations, soups, grilled meats,
+                    and catering options.
                 </p>
 
             </div>
 
         </section>
 
+
+        <!-- Menu -->
         <section class="menu-section">
 
             <h2>
@@ -124,30 +127,46 @@
 
             <div class="menu-controls">
 
-                <button id="showAll" type="button">
+                <button id="showAll" type="button" aria-pressed="true">
+
                     All Meals
+
                 </button>
 
-                <button id="showBreakfast" type="button">
+                <button id="showBreakfast" type="button" aria-pressed="false">
+
                     Breakfast
+
                 </button>
 
-                <button id="showGrills" type="button">
+                <button id="showGrills" type="button" aria-pressed="false">
+
                     Grills
+
                 </button>
 
-                <button id="showSoups" type="button">
+                <button id="showSoups" type="button" aria-pressed="false">
+
                     Soups
+
                 </button>
 
             </div>
 
+
+            <!-- Dynamic Menu Cards -->
             <div id="menuItems" class="menu-grid">
-                <!-- Menu items loaded dynamically from JSON -->
+
+                <p>
+                    Loading menu...
+                </p>
+
             </div>
 
         </section>
 
+
+        <!-- Favorites -->
         <section class="favorites-section">
 
             <h2>
@@ -155,16 +174,54 @@
             </h2>
 
             <p>
-                Save your favorite meals so you can easily find them when you
-                return.
+                Discover some of our most enjoyable traditional meals
+                prepared fresh for you.
             </p>
 
             <div id="favoriteItems" class="menu-grid">
-                <!-- Saved favorites loaded with JavaScript -->
+
+                <article class="feature-card">
+
+                    <h3>
+                        Fresh Masa
+                    </h3>
+
+                    <p>
+                        Soft, warm and freshly prepared traditional masa.
+                    </p>
+
+                </article>
+
+                <article class="feature-card">
+
+                    <h3>
+                        Masa with Suya
+                    </h3>
+
+                    <p>
+                        Delicious masa paired with flavorful Nigerian suya.
+                    </p>
+
+                </article>
+
+                <article class="feature-card">
+
+                    <h3>
+                        Masa Breakfast Combo
+                    </h3>
+
+                    <p>
+                        A satisfying traditional breakfast combination.
+                    </p>
+
+                </article>
+
             </div>
 
         </section>
 
+
+        <!-- Catering -->
         <section class="catering">
 
             <h2>
@@ -173,8 +230,8 @@
 
             <p>
                 Masa Delight Abuja provides catering services for birthdays,
-                weddings, meetings, offices, religious gatherings, and special
-                events.
+                weddings, meetings, offices, religious gatherings,
+                and special events.
             </p>
 
             <div class="features">
@@ -222,6 +279,8 @@
 
         </section>
 
+
+        <!-- Call to Action -->
         <section class="call-to-action">
 
             <h2>
@@ -239,6 +298,8 @@
 
         </section>
 
+
+        <!-- Meal Details Modal -->
         <dialog id="menuModal">
 
             <button id="closeModal" type="button" aria-label="Close meal details">
@@ -248,13 +309,15 @@
             </button>
 
             <div id="modalContent">
-                <!-- Detailed meal information appears here -->
+                <!-- Meal details loaded by JavaScript -->
             </div>
 
         </dialog>
 
     </main>
 
+
+    <!-- Footer -->
     <footer>
 
         <p>
@@ -276,9 +339,6 @@
                 Attributions
             </a>
         </p>
-
-        <p>
-
 
         <p>
             Last Modified:

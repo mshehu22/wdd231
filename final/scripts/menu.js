@@ -13,102 +13,68 @@ if (year) {
 }
 
 
-// ---------- Navigation ----------
-
-const menuButton = document.querySelector("#menuButton");
-const navigation = document.querySelector("#navigation");
-
-if (menuButton && navigation) {
-    menuButton.addEventListener("click", () => {
-        navigation.classList.toggle("open");
-
-        const expanded = navigation.classList.contains("open");
-
-        menuButton.setAttribute("aria-expanded", expanded);
-
-        menuButton.textContent = expanded ? "✖" : "☰";
-    });
-}
-
-
 // ---------- DOM Elements ----------
 
-const menuContainer = document.querySelector("#menuContainer");
-const categorySelect = document.querySelector("#category");
+const menuContainer = document.querySelector("#menuItems");
 
-const dialog = document.querySelector("#menuDialog");
-const dialogContent = document.querySelector("#dialogContent");
-const closeDialog = document.querySelector("#closeDialog");
+const allButton = document.querySelector("#showAll");
+const breakfastButton = document.querySelector("#showBreakfast");
+const grillsButton = document.querySelector("#showGrills");
+const soupsButton = document.querySelector("#showSoups");
+
+const modal = document.querySelector("#menuModal");
+const modalContent = document.querySelector("#modalContent");
+const closeModal = document.querySelector("#closeModal");
 
 let menuItems = [];
 
 
-// ---------- Fetch Menu Data ----------
+// ---------- Load Menu Data ----------
 
-async function getMenu() {
+async function loadMenu() {
+
     if (!menuContainer) {
         return;
     }
 
     try {
+
         const response = await fetch("data/menu.json");
 
         if (!response.ok) {
-            throw new Error("Unable to fetch menu data.");
+            throw new Error("Unable to load menu data.");
         }
 
-        menuItems = await response.json();
+        const data = await response.json();
 
-        if (!Array.isArray(menuItems)) {
-            throw new Error("Menu data is not in the correct format.");
+        if (!Array.isArray(data)) {
+            throw new Error("Menu data must be an array.");
         }
+
+        menuItems = data;
 
         displayMenu(menuItems);
-        populateCategories();
-        restoreFilter();
+
+        setActiveButton(allButton);
 
     } catch (error) {
+
         console.error("Menu loading error:", error);
 
         menuContainer.innerHTML = `
             <p class="error">
-                Unable to load menu items.
-                Please refresh the page.
+                Unable to load the menu at this time.
+                Please refresh the page and try again.
             </p>
         `;
     }
 }
 
 
-// ---------- Create Category Options ----------
-
-function populateCategories() {
-    if (!categorySelect) {
-        return;
-    }
-
-    const categories = [
-        ...new Set(menuItems.map(item => item.category))
-    ].sort();
-
-    categorySelect.innerHTML = `
-        <option value="all">All Categories</option>
-    `;
-
-    categories.forEach(category => {
-        const option = document.createElement("option");
-
-        option.value = category;
-        option.textContent = category;
-
-        categorySelect.appendChild(option);
-    });
-}
-
-
 // ---------- Display Menu ----------
 
 function displayMenu(items) {
+
     if (!menuContainer) {
         return;
     }
@@ -116,9 +82,10 @@ function displayMenu(items) {
     menuContainer.innerHTML = "";
 
     if (items.length === 0) {
+
         menuContainer.innerHTML = `
             <p class="error">
-                No menu items found for this category.
+                No meals are available in this category.
             </p>
         `;
 
@@ -126,6 +93,7 @@ function displayMenu(items) {
     }
 
     items.forEach(item => {
+
         const card = document.createElement("article");
 
         card.classList.add("card");
@@ -134,6 +102,8 @@ function displayMenu(items) {
             <img
                 src="${item.image}"
                 alt="${item.name}"
+                width="400"
+                height="300"
                 loading="lazy">
 
             <div class="card-content">
@@ -163,94 +133,154 @@ function displayMenu(items) {
             </div>
         `;
 
-        const button = card.querySelector(".details-btn");
+        const detailsButton =
+            card.querySelector(".details-btn");
 
-        if (button) {
-            button.addEventListener("click", () => {
-                openDialog(item);
+        if (detailsButton) {
+
+            detailsButton.addEventListener("click", () => {
+                openModal(item);
             });
+
         }
 
         menuContainer.appendChild(card);
+
     });
 }
 
 
-// ---------- Filter Menu ----------
+// ---------- Filter Helper ----------
 
-if (categorySelect) {
-    categorySelect.addEventListener("change", () => {
-        const category = categorySelect.value;
+function filterByCategory(category) {
 
-        localStorage.setItem("selectedCategory", category);
+    const filteredMeals = menuItems.filter(item => {
 
-        if (category === "all") {
-            displayMenu(menuItems);
-            return;
+        return item.category &&
+            item.category.toLowerCase() === category.toLowerCase();
+
+    });
+
+    displayMenu(filteredMeals);
+}
+
+
+// ---------- All Meals Button ----------
+
+if (allButton) {
+
+    allButton.addEventListener("click", () => {
+
+        displayMenu(menuItems);
+
+        setActiveButton(allButton);
+
+    });
+
+}
+
+
+// ---------- Breakfast Button ----------
+
+if (breakfastButton) {
+
+    breakfastButton.addEventListener("click", () => {
+
+        filterByCategory("Breakfast");
+
+        setActiveButton(breakfastButton);
+
+    });
+
+}
+
+
+// ---------- Grills Button ----------
+
+if (grillsButton) {
+
+    grillsButton.addEventListener("click", () => {
+
+        filterByCategory("Grill");
+
+        setActiveButton(grillsButton);
+
+    });
+
+}
+
+
+// ---------- Soups Button ----------
+
+if (soupsButton) {
+
+    soupsButton.addEventListener("click", () => {
+
+        filterByCategory("Soup");
+
+        setActiveButton(soupsButton);
+
+    });
+
+}
+
+
+// ---------- Active Filter Button ----------
+
+function setActiveButton(activeButton) {
+
+    const buttons = [
+        allButton,
+        breakfastButton,
+        grillsButton,
+        soupsButton
+    ];
+
+    buttons.forEach(button => {
+
+        if (button) {
+
+            button.classList.remove("active");
+
+            button.setAttribute(
+                "aria-pressed",
+                "false"
+            );
+
         }
 
-        const filteredItems = menuItems.filter(
-            item => item.category === category
+    });
+
+    if (activeButton) {
+
+        activeButton.classList.add("active");
+
+        activeButton.setAttribute(
+            "aria-pressed",
+            "true"
         );
 
-        displayMenu(filteredItems);
-    });
+    }
 }
 
 
-// ---------- Restore Previous Filter ----------
+// ---------- Open Meal Modal ----------
 
-function restoreFilter() {
-    if (!categorySelect) {
+function openModal(item) {
+
+    if (!modal || !modalContent) {
         return;
     }
 
-    const savedCategory = localStorage.getItem("selectedCategory");
-
-    if (!savedCategory) {
-        return;
-    }
-
-    const categoryExists = [
-        ...categorySelect.options
-    ].some(option => option.value === savedCategory);
-
-    if (!categoryExists) {
-        localStorage.removeItem("selectedCategory");
-        categorySelect.value = "all";
-        displayMenu(menuItems);
-        return;
-    }
-
-    categorySelect.value = savedCategory;
-
-    if (savedCategory === "all") {
-        displayMenu(menuItems);
-        return;
-    }
-
-    const filteredItems = menuItems.filter(
-        item => item.category === savedCategory
-    );
-
-    displayMenu(filteredItems);
-}
-
-
-// ---------- Modal Dialog ----------
-
-function openDialog(item) {
-    if (!dialog || !dialogContent) {
-        return;
-    }
-
-    dialogContent.innerHTML = `
-        <h2>${item.name}</h2>
-
+    modalContent.innerHTML = `
         <img
             src="${item.image}"
             alt="${item.name}"
+            width="500"
+            height="350"
             loading="lazy">
+
+        <h2>${item.name}</h2>
 
         <p>
             ${item.description}
@@ -264,34 +294,64 @@ function openDialog(item) {
         <p class="price">
             ₦${Number(item.price).toLocaleString()}
         </p>
+
+        <p>
+            Freshly prepared by Masa Delight Abuja.
+        </p>
     `;
 
-    if (typeof dialog.showModal === "function") {
-        dialog.showModal();
+    if (typeof modal.showModal === "function") {
+
+        modal.showModal();
+
     } else {
-        dialog.setAttribute("open", "");
+
+        modal.setAttribute("open", "");
+
     }
 
-    if (closeDialog) {
-        closeDialog.focus();
-    }
 }
 
 
-// ---------- Close Dialog Button ----------
+// ---------- Close Modal ----------
 
-if (closeDialog && dialog) {
-    closeDialog.addEventListener("click", () => {
-        dialog.close();
-    });
+function closeMenuModal() {
+
+    if (!modal) {
+        return;
+    }
+
+    if (typeof modal.close === "function") {
+
+        modal.close();
+
+    } else {
+
+        modal.removeAttribute("open");
+
+    }
+
 }
 
 
-// ---------- Close Dialog When Clicking Outside ----------
+if (closeModal) {
 
-if (dialog) {
-    dialog.addEventListener("click", event => {
-        const rect = dialog.getBoundingClientRect();
+    closeModal.addEventListener(
+        "click",
+        closeMenuModal
+    );
+
+}
+
+
+// ---------- Close Modal by Clicking Outside ----------
+
+if (modal) {
+
+    modal.addEventListener("click", event => {
+
+        const rect =
+            modal.getBoundingClientRect();
 
         const clickedOutside =
             event.clientX < rect.left ||
@@ -300,22 +360,31 @@ if (dialog) {
             event.clientY > rect.bottom;
 
         if (clickedOutside) {
-            dialog.close();
+
+            closeMenuModal();
+
         }
+
     });
+
 }
 
 
-// ---------- Close Dialog With Escape ----------
+// ---------- Close Modal With Escape ----------
 
-if (dialog) {
-    dialog.addEventListener("cancel", event => {
+if (modal) {
+
+    modal.addEventListener("cancel", event => {
+
         event.preventDefault();
-        dialog.close();
+
+        closeMenuModal();
+
     });
+
 }
 
 
 // ---------- Initialize ----------
 
-getMenu();
+loadMenu();

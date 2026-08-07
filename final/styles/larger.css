@@ -3,7 +3,12 @@
    WDD 231 Final Project
    larger.css
    Desktop / Large Screen Styles
-   ========================================== */
+========================================== */
+
+
+/* ==========================================
+   LARGE SCREENS
+========================================== */
 
 @media only screen and (min-width: 768px) {
 
@@ -28,14 +33,15 @@
         height: 80px;
     }
 
-    .logo-box h1 {
+    .site-name {
         font-size: 1.6rem;
         margin: 0;
     }
 
-    .logo-box p {
+    .site-tagline {
         margin: .25rem 0 0;
     }
+
 
     /* ---------- Navigation ---------- */
 
@@ -49,6 +55,7 @@
         align-items: center;
         justify-content: flex-end;
         gap: .5rem;
+        width: auto;
     }
 
     #navigation a {
@@ -63,6 +70,7 @@
         color: var(--dark-color);
     }
 
+
     /* ---------- Main ---------- */
 
     main {
@@ -70,13 +78,14 @@
     }
 
     section {
-        margin: 4rem 0;
+        margin: 3rem 0;
     }
 
     section h2 {
         font-size: 2rem;
         margin-bottom: 2rem;
     }
+
 
     /* ---------- Hero ---------- */
 
@@ -88,7 +97,7 @@
         padding: 3rem;
     }
 
-    .hero-text h2 {
+    .hero-text h1 {
         font-size: 3rem;
     }
 
@@ -97,25 +106,49 @@
         max-width: 750px;
     }
 
+
     /* ---------- Page Banner ---------- */
 
     .page-banner {
-        min-height: 300px;
+        min-height: 320px;
+        position: relative;
     }
 
-    .page-banner h2 {
-        font-size: 2.5rem;
+    .page-banner img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
     }
 
-    .page-banner p {
+    .banner-text {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        background: rgba(0, 0, 0, .45);
+    }
+
+    .banner-text h1 {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .banner-text p {
         max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto;
     }
 
-    /* ---------- Cards ---------- */
+
+    /* ==========================================
+       GENERAL CARDS
+    ========================================== */
 
     .cards {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
     }
@@ -127,6 +160,7 @@
     }
 
     .card img {
+        width: 100%;
         height: 240px;
         object-fit: cover;
     }
@@ -142,20 +176,228 @@
         padding-top: .75rem;
     }
 
-    /* ---------- Menu Grid ---------- */
 
-    .menu-grid {
+    /* ==========================================
+       MENU PAGE
+    ========================================== */
+
+    .menu-section {
+        width: 100%;
+    }
+
+
+    /* ---------- Menu Filter Buttons ---------- */
+
+    .menu-controls {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(120px, 1fr));
+        justify-content: center;
+        gap: 1rem;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+    }
+
+    .menu-controls button {
+        width: 100%;
+        min-height: 52px;
+        padding: .85rem 1rem;
+        border: 2px solid var(--primary-color);
+        border-radius: 6px;
+        background-color: var(--primary-color);
+        color: var(--light-color);
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+
+        transition:
+            background-color .3s ease,
+            color .3s ease,
+            transform .3s ease;
+    }
+
+    .menu-controls button:hover,
+    .menu-controls button:focus,
+    .menu-controls button.active {
+        background-color: var(--secondary-color);
+        color: var(--dark-color);
+        border-color: var(--secondary-color);
+        transform: translateY(-2px);
+    }
+
+    .menu-controls button:focus-visible {
+        outline: 3px solid var(--secondary-color);
+        outline-offset: 3px;
+    }
+
+
+    /* ==========================================
+       DYNAMIC MENU ITEMS
+    ========================================== */
+
+    #menuItems {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+        width: 100%;
+        align-items: stretch;
+    }
+
+
+    /* ---------- Menu Cards ---------- */
+
+    #menuItems .card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-width: 0;
+        overflow: hidden;
+
+        background-color: var(--light-color);
+
+        border-radius: 10px;
+
+        box-shadow:
+            0 3px 12px rgba(0, 0, 0, .12);
+
+        transition:
+            transform .25s ease,
+            box-shadow .25s ease;
+    }
+
+    #menuItems .card:hover {
+        transform: translateY(-4px);
+
+        box-shadow:
+            0 8px 20px rgba(0, 0, 0, .16);
+    }
+
+
+    /* ---------- Menu Images ---------- */
+
+    #menuItems .card img {
+        display: block;
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+
+    /* ---------- Menu Card Content ---------- */
+
+    #menuItems .card-content {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 1.25rem;
+    }
+
+    #menuItems .card-content h3 {
+        margin-top: 0;
+        margin-bottom: .75rem;
+        font-size: 1.3rem;
+    }
+
+    #menuItems .card-content p {
+        margin-bottom: .75rem;
+    }
+
+    #menuItems .card-content .price {
+        margin-top: auto;
+        padding-top: 1rem;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+
+    /* ---------- Details Button ---------- */
+
+    #menuItems .details-btn {
+        display: block;
+        width: 100%;
+        margin-top: 1rem;
+
+        padding: .8rem 1rem;
+
+        border: 2px solid var(--primary-color);
+        border-radius: 6px;
+
+        background-color: var(--primary-color);
+        color: var(--light-color);
+
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+
+        cursor: pointer;
+
+        transition:
+            background-color .3s ease,
+            color .3s ease,
+            border-color .3s ease,
+            transform .2s ease;
+    }
+
+    #menuItems .details-btn:hover,
+    #menuItems .details-btn:focus {
+        background-color: var(--secondary-color);
+        color: var(--dark-color);
+        border-color: var(--secondary-color);
+        transform: translateY(-2px);
+    }
+
+    #menuItems .details-btn:focus-visible {
+        outline: 3px solid var(--secondary-color);
+        outline-offset: 3px;
+    }
+
+
+    /* ==========================================
+       FAVORITES
+    ========================================== */
+
+    .favorites-section {
+        width: 100%;
+    }
+
+    #favoriteItems {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+    }
+
+
+    /* ==========================================
+       CATERING
+    ========================================== */
+
+    .features {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
     }
 
-    .menu-card {
+    .feature-card {
         height: 100%;
     }
 
-    /* ---------- About ---------- */
+
+    /* ==========================================
+       CALL TO ACTION
+    ========================================== */
+
+    .call-to-action {
+        padding: 3rem;
+        text-align: center;
+    }
+
+
+    /* ==========================================
+       ABOUT
+    ========================================== */
 
     .about {
+        display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
         gap: 3rem;
@@ -171,9 +413,13 @@
         padding: 2rem;
     }
 
-    /* ---------- Gallery ---------- */
+
+    /* ==========================================
+       GALLERY
+    ========================================== */
 
     .gallery {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
     }
@@ -184,9 +430,13 @@
         object-fit: cover;
     }
 
-    /* ---------- Contact ---------- */
+
+    /* ==========================================
+       CONTACT
+    ========================================== */
 
     .contact-grid {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
         align-items: start;
         gap: 2.5rem;
@@ -203,7 +453,10 @@
         font-size: 1rem;
     }
 
-    /* ---------- Order Form ---------- */
+
+    /* ==========================================
+       ORDER FORM
+    ========================================== */
 
     .order-form {
         max-width: 800px;
@@ -219,26 +472,80 @@
         margin-bottom: 1.25rem;
     }
 
-    /* ---------- Catering ---------- */
 
-    .features {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+    /* ==========================================
+       MENU MODAL
+    ========================================== */
+
+    #menuModal {
+        width: min(80%, 650px);
+        max-width: 650px;
+        max-height: 85vh;
+
+        padding: 2rem;
+
+        border: none;
+        border-radius: 10px;
+
+        box-shadow:
+            0 8px 30px rgba(0, 0, 0, .3);
+
+        overflow-y: auto;
     }
 
-    /* ---------- Favorites ---------- */
-
-    .favorites-section .menu-grid {
-        grid-template-columns: repeat(3, 1fr);
+    #menuModal::backdrop {
+        background: rgba(0, 0, 0, .65);
     }
 
-    /* ---------- Call To Action ---------- */
-
-    .call-to-action {
-        padding: 3rem;
+    #modalContent {
+        text-align: center;
     }
 
-    /* ---------- Footer ---------- */
+    #modalContent img {
+        display: block;
+        width: 100%;
+        max-width: 500px;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin: 1rem auto;
+    }
+
+    #modalContent h2 {
+        margin-bottom: 1rem;
+    }
+
+    #modalContent .price {
+        font-size: 1.3rem;
+    }
+
+    #closeModal {
+        display: block;
+        margin-left: auto;
+
+        border: none;
+        cursor: pointer;
+
+        padding: .5rem .75rem;
+
+        border-radius: 5px;
+
+        background-color: var(--primary-color);
+        color: var(--light-color);
+
+        font-size: 1.1rem;
+    }
+
+    #closeModal:hover,
+    #closeModal:focus {
+        background-color: var(--secondary-color);
+        color: var(--dark-color);
+    }
+
+
+    /* ==========================================
+       FOOTER
+    ========================================== */
 
     footer {
         padding: 3rem 2rem;
@@ -252,7 +559,10 @@
         width: 40px;
     }
 
-    /* ---------- Buttons ---------- */
+
+    /* ==========================================
+       BUTTONS
+    ========================================== */
 
     .button {
         transition:
@@ -265,14 +575,20 @@
         transform: translateY(-3px);
     }
 
-    /* ---------- Tables ---------- */
+
+    /* ==========================================
+       TABLES
+    ========================================== */
 
     table th,
     table td {
         padding: 1rem;
     }
 
-    /* ---------- Utility ---------- */
+
+    /* ==========================================
+       UTILITY
+    ========================================== */
 
     .center {
         max-width: 900px;
@@ -280,7 +596,10 @@
         margin-right: auto;
     }
 
-    /* ---------- Confirmation ---------- */
+
+    /* ==========================================
+       CONFIRMATION
+    ========================================== */
 
     .confirmation {
         max-width: 800px;
@@ -289,18 +608,12 @@
         padding: 2rem;
     }
 
-    /* ---------- Dialog ---------- */
-
-    dialog {
-        max-width: 650px;
-        width: 80%;
-    }
 }
 
 
 /* ==========================================
-   Extra Large Screens
-   ========================================== */
+   EXTRA LARGE SCREENS
+========================================== */
 
 @media only screen and (min-width: 1200px) {
 
@@ -318,11 +631,11 @@
         height: 80px;
     }
 
-    .logo-box h1 {
+    .site-name {
         font-size: 1.8rem;
     }
 
-    .hero-text h2 {
+    .hero-text h1 {
         font-size: 3.5rem;
     }
 
@@ -334,25 +647,47 @@
         gap: 2.5rem;
     }
 
-    .menu-grid {
-        gap: 2.5rem;
+
+    /* ---------- Menu ---------- */
+
+    #menuItems {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 2rem;
     }
+
+    #favoriteItems {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 2rem;
+    }
+
+
+    /* ---------- Gallery ---------- */
 
     .gallery {
         gap: 1.5rem;
     }
 
+
+    /* ---------- About ---------- */
+
     .about {
         gap: 4rem;
     }
 
+
+    /* ---------- Contact ---------- */
+
     .contact-grid {
         gap: 4rem;
     }
+
+
+    /* ---------- Main ---------- */
 
     main {
         max-width: 1400px;
         margin-left: auto;
         margin-right: auto;
     }
+
 }
