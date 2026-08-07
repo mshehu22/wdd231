@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +9,15 @@
     <title>Masa Delight Abuja | Menu</title>
 
     <meta name="description"
-        content="Explore the Masa Delight Abuja menu featuring authentic Nigerian masa, breakfast combinations, soups, grilled meats, suya, and catering meals.">
+        content="Explore the Masa Delight Abuja menu featuring traditional Nigerian masa, breakfast combinations, soups, grilled meats, suya, and catering meals.">
 
     <meta name="author" content="Magdalene Shehu">
 
     <!-- Open Graph -->
-
-    <meta property="og:title" content="Explore the Authentic Menu at Masa Delight Abuja">
+    <meta property="og:title" content="Masa Delight Abuja | Traditional Nigerian Menu">
 
     <meta property="og:description"
-        content="Browse authentic Northern Nigerian masa, breakfast combinations, grilled meals, soups, and catering options in Abuja.">
+        content="Explore authentic Northern Nigerian masa, breakfast combinations, soups, grilled meals, suya, and catering options in Abuja.">
 
     <meta property="og:image" content="https://mshehu22.github.io/wdd231/final/images/hero.jpg">
 
@@ -48,7 +46,6 @@
     <script src="scripts/date.js" defer></script>
 
     <script type="module" src="scripts/menu.js"></script>
-
 </head>
 
 <body>
@@ -62,15 +59,11 @@
             <div>
 
                 <p class="site-name">
-
                     Masa Delight Abuja
-
                 </p>
 
-                <p>
-
-                    Authentic Northern Nigerian Breakfast & Catering
-
+                <p class="site-tagline">
+                    Authentic Northern Nigerian Breakfast &amp; Catering
                 </p>
 
             </div>
@@ -86,29 +79,22 @@
         <nav id="navigation">
 
             <a href="index.html">
-
                 Home
-
             </a>
 
             <a href="menu.html" class="active">
-
                 Menu
-
             </a>
 
             <a href="order.html">
-
                 Order
-
             </a>
 
         </nav>
 
     </header>
-    <main>
 
-        <h1>Our Menu</h1>
+    <main>
 
         <section class="page-banner">
 
@@ -116,14 +102,14 @@
 
             <div class="banner-text">
 
-                <h2>Fresh Northern Nigerian Meals</h2>
+                <h1>
+                    Our Delicious Menu
+                </h1>
 
                 <p>
-
-                    Explore our delicious selection of freshly prepared masa,
+                    Enjoy freshly prepared traditional Northern Nigerian meals,
                     breakfast combinations, soups, grilled meats, and catering
-                    packages made daily for customers across Abuja.
-
+                    options.
                 </p>
 
             </div>
@@ -132,115 +118,102 @@
 
         <section class="menu-section">
 
-            <h2>Browse Our Menu</h2>
+            <h2>
+                Explore Our Meals
+            </h2>
 
-            <p>
+            <div class="menu-controls">
 
-                Filter meals by category to quickly find your favourite dishes.
+                <button id="showAll" type="button">
+                    All Meals
+                </button>
 
-            </p>
+                <button id="showBreakfast" type="button">
+                    Breakfast
+                </button>
 
-            <div class="menu-filter">
+                <button id="showGrills" type="button">
+                    Grills
+                </button>
 
-                <label for="category">
-
-                    Category
-
-                </label>
-
-                <select id="category">
-
-                    <option value="all">All Meals</option>
-
-                    <option value="Classic">Classic</option>
-
-                    <option value="Breakfast">Breakfast</option>
-
-                    <option value="Special">Special</option>
-
-                    <option value="Soup">Soup</option>
-
-                    <option value="Seafood">Seafood</option>
-
-                    <option value="Chicken">Chicken</option>
-
-                    <option value="Grill">Grill</option>
-
-                    <option value="Healthy">Healthy</option>
-
-                </select>
+                <button id="showSoups" type="button">
+                    Soups
+                </button>
 
             </div>
 
-            <div id="menuContainer" class="menu-grid">
-
-                <!-- JavaScript loads menu items here -->
-
+            <div id="menuItems" class="menu-grid">
+                <!-- Menu items loaded dynamically from JSON -->
             </div>
 
         </section>
 
         <section class="favorites-section">
 
-            <h2>Customer Favorites</h2>
+            <h2>
+                Your Favorite Meals
+            </h2>
 
             <p>
-
-                Our most popular meals loved by customers throughout Abuja.
-
+                Save your favorite meals so you can easily find them when you
+                return.
             </p>
+
+            <div id="favoriteItems" class="menu-grid">
+                <!-- Saved favorites loaded with JavaScript -->
+            </div>
 
         </section>
 
         <section class="catering">
 
-            <h2>Catering Services</h2>
+            <h2>
+                Catering Services
+            </h2>
 
             <p>
-
-                We provide freshly prepared meals for birthdays, office meetings,
-                weddings, conferences, church programmes, family celebrations,
-                and other special occasions.
-
+                Masa Delight Abuja provides catering services for birthdays,
+                weddings, meetings, offices, religious gatherings, and special
+                events.
             </p>
 
             <div class="features">
 
                 <article class="feature-card">
 
-                    <h3>Small Events</h3>
+                    <h3>
+                        Small Events
+                    </h3>
 
                     <p>
-
-                        Breakfast packages for family gatherings,
-                        birthdays and private celebrations.
-
+                        Breakfast packages and meals prepared for family
+                        celebrations and small gatherings.
                     </p>
 
                 </article>
 
                 <article class="feature-card">
 
-                    <h3>Corporate Catering</h3>
+                    <h3>
+                        Corporate Catering
+                    </h3>
 
                     <p>
-
-                        Fresh meals for meetings,
-                        workshops and office events.
-
+                        Delicious meals prepared for offices, meetings,
+                        workshops, and conferences.
                     </p>
 
                 </article>
 
                 <article class="feature-card">
 
-                    <h3>Large Events</h3>
+                    <h3>
+                        Large Events
+                    </h3>
 
                     <p>
-
-                        Professional catering services
-                        for weddings and community celebrations.
-
+                        Catering solutions for weddings, ceremonies,
+                        and community celebrations.
                     </p>
 
                 </article>
@@ -251,91 +224,68 @@
 
         <section class="call-to-action">
 
-            <h2>Ready to Order?</h2>
+            <h2>
+                Ready to Order?
+            </h2>
 
             <p>
-
-                Place your order today and enjoy freshly prepared
-                Northern Nigerian meals delivered with care.
-
+                Place your order for fresh masa, breakfast combinations,
+                and catering services in Abuja.
             </p>
 
             <a href="order.html" class="button">
-
                 Place an Order
-
             </a>
 
         </section>
 
-        <!-- Accessible Modal -->
+        <dialog id="menuModal">
 
-        <dialog id="menuDialog">
+            <button id="closeModal" type="button" aria-label="Close meal details">
 
-            <button id="closeDialog" aria-label="Close menu details">
-
-                ✕
+                ✖
 
             </button>
 
-            <div id="dialogContent">
-
-                <!-- JavaScript inserts details -->
-
+            <div id="modalContent">
+                <!-- Detailed meal information appears here -->
             </div>
 
         </dialog>
 
     </main>
+
     <footer>
 
         <p>
-
             &copy;
             <span id="year"></span>
-
             Masa Delight Abuja
-
         </p>
 
         <p>
-
             WDD 231 Final Project
-
         </p>
 
         <p>
-
             Created by Magdalene Shehu
-
         </p>
 
         <p>
-
-            Last Modified:
-
-            <span id="lastModified"></span>
-
-        </p>
-
-        <p>
-
             <a href="attributions.html">
-
                 Attributions
-
             </a>
-
         </p>
 
         <p>
-
             <a href="https://youtu.be/REPLACE_WITH_YOUR_VIDEO" target="_blank" rel="noopener">
-
                 Project Demonstration Video
-
             </a>
+        </p>
 
+        <p>
+            Last Modified:
+            <span id="lastModified"></span>
         </p>
 
     </footer>

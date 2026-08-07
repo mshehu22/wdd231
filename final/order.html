@@ -3,26 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Masa Delight Abuja | Order</title>
 
     <meta name="description"
-        content="Place your order for authentic northern Nigerian masa, breakfast combinations, soups, grilled meals and catering services in Abuja.">
+        content="Order freshly prepared Northern Nigerian masa, breakfast combinations, soups, grilled meals, and catering services from Masa Delight Abuja.">
 
     <meta name="author" content="Magdalene Shehu">
 
-    <meta property="og:title" content="Masa Delight Abuja | Order Online">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Masa Delight Abuja | Order Fresh Nigerian Meals">
+
     <meta property="og:description"
-        content="Order freshly prepared northern Nigerian meals, masa, breakfast combinations and catering options from Masa Delight Abuja.">
+        content="Place an order for fresh Northern Nigerian masa, breakfast combinations, soups, grilled meals, and catering services in Abuja.">
+
     <meta property="og:image" content="https://mshehu22.github.io/wdd231/final/images/hero.jpg">
+
     <meta property="og:url" content="https://mshehu22.github.io/wdd231/final/order.html">
+
     <meta property="og:site_name" content="Masa Delight Abuja">
+
     <meta property="og:type" content="website">
 
     <link rel="icon" href="images/logo.png" type="image/png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
@@ -30,200 +38,324 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="styles/base.css">
+
     <link rel="stylesheet" href="styles/larger.css">
 
     <script src="scripts/navigation.js" defer></script>
+
     <script src="scripts/date.js" defer></script>
+
     <script type="module" src="scripts/order.js"></script>
 </head>
 
 <body>
 
     <header>
+
         <div class="logo-box">
+
             <img src="images/logo.png" alt="Masa Delight Abuja Logo" width="80" height="80">
 
             <div>
-                <h1>Masa Delight Abuja</h1>
-                <p>Authentic Northern Nigerian Breakfast &amp; Catering</p>
+
+                <p class="site-name">
+                    Masa Delight Abuja
+                </p>
+
+                <p class="site-tagline">
+                    Authentic Northern Nigerian Breakfast &amp; Catering
+                </p>
+
             </div>
+
         </div>
 
-        <button id="menuButton" aria-label="Toggle Navigation" aria-controls="navigation" aria-expanded="false">
+        <button id="menuButton" type="button" aria-label="Toggle Navigation" aria-controls="navigation"
+            aria-expanded="false">
+
             ☰
+
         </button>
 
         <nav id="navigation">
-            <a href="index.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="order.html" class="active" aria-current="page">Order</a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="menu.html">
+                Menu
+            </a>
+
+            <a href="order.html" class="active">
+                Order
+            </a>
+
         </nav>
+
     </header>
 
     <main>
 
         <section class="page-banner">
-            <h2>Place Your Order</h2>
+
+            <h1>
+                Place Your Order
+            </h1>
 
             <p>
-                Complete the form below and we'll contact you to confirm your order.
+                Complete the form below and we'll contact you to confirm
+                your order.
             </p>
+
         </section>
 
         <section class="contact-information">
-            <h2>Business Information</h2>
+
+            <h2>
+                Business Information
+            </h2>
 
             <div class="contact-grid">
 
                 <article>
-                    <h3>Location</h3>
+
+                    <h3>
+                        Location
+                    </h3>
+
                     <p>
                         Garki District<br>
                         Abuja, Nigeria
                     </p>
+
                 </article>
 
                 <article>
-                    <h3>Phone</h3>
+
+                    <h3>
+                        Phone
+                    </h3>
+
                     <p>
                         +234 55555888
                     </p>
+
                 </article>
 
                 <article>
-                    <h3>Business Hours</h3>
+
+                    <h3>
+                        Business Hours
+                    </h3>
+
                     <p>
                         Monday – Sunday<br>
                         7:00 AM – 9:00 PM
                     </p>
+
                 </article>
 
                 <article>
-                    <h3>Catering</h3>
+
+                    <h3>
+                        Catering
+                    </h3>
+
                     <p>
                         Weddings<br>
                         Birthdays<br>
                         Office Meetings<br>
                         Special Events
                     </p>
+
                 </article>
 
             </div>
+
         </section>
 
         <section class="order-form">
-            <h2>Order Form</h2>
+
+            <h2>
+                Order Details
+            </h2>
 
             <form method="get" action="thankyou.html">
 
                 <div class="form-group">
+
                     <label for="fullname">
                         Full Name *
                     </label>
 
                     <input type="text" id="fullname" name="fullname" autocomplete="name" required>
+
                 </div>
 
                 <div class="form-group">
+
                     <label for="phone">
                         Phone Number *
                     </label>
 
                     <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+
                 </div>
 
                 <div class="form-group">
+
                     <label for="email">
                         Email Address
                     </label>
 
                     <input type="email" id="email" name="email" autocomplete="email">
+
                 </div>
 
                 <div class="form-group">
+
                     <label for="meal">
                         Preferred Meal *
                     </label>
 
                     <select id="meal" name="meal" required>
-                        <option value="">Select a Meal</option>
-                        <option value="Plain Masa">Plain Masa</option>
-                        <option value="Egg Masa">Egg Masa</option>
-                        <option value="Milk Masa">Milk Masa</option>
-                        <option value="Honey Masa">Honey Masa</option>
-                        <option value="Butter Masa">Butter Masa</option>
-                        <option value="Cheese Masa">Cheese Masa</option>
-                        <option value="Mini Masa Platter">Mini Masa Platter</option>
+
+                        <option value="">
+                            Select a Meal
+                        </option>
+
+                        <option value="Plain Masa">
+                            Plain Masa
+                        </option>
+
+                        <option value="Egg Masa">
+                            Egg Masa
+                        </option>
+
+                        <option value="Milk Masa">
+                            Milk Masa
+                        </option>
+
+                        <option value="Honey Masa">
+                            Honey Masa
+                        </option>
+
+                        <option value="Butter Masa">
+                            Butter Masa
+                        </option>
+
+                        <option value="Cheese Masa">
+                            Cheese Masa
+                        </option>
+
+                        <option value="Mini Masa Platter">
+                            Mini Masa Platter
+                        </option>
+
                         <option value="Masa with Pepper Soup">
                             Masa with Pepper Soup
                         </option>
+
                         <option value="Masa with Fresh Fish">
                             Masa with Fresh Fish
                         </option>
+
                         <option value="Masa with Peppered Chicken">
                             Masa with Peppered Chicken
                         </option>
+
                         <option value="Masa with Stuffed Chicken">
                             Masa with Stuffed Chicken
                         </option>
+
                         <option value="Masa with Stuffed Sausage">
                             Masa with Stuffed Sausage
                         </option>
+
                         <option value="Masa with Suya">
                             Masa with Suya
                         </option>
+
                         <option value="Masa with Yaji">
                             Masa with Yaji
                         </option>
+
                         <option value="Masa with Mixed Vegetables">
                             Masa with Mixed Vegetables
                         </option>
+
                     </select>
+
                 </div>
 
                 <div class="form-group">
+
                     <label for="quantity">
                         Quantity *
                     </label>
 
                     <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
                 </div>
 
                 <div class="form-group">
+
                     <label for="delivery">
                         Delivery Option
                     </label>
 
                     <select id="delivery" name="delivery">
-                        <option value="Dine In">Dine In</option>
-                        <option value="Take Away">Take Away</option>
-                        <option value="Home Delivery">Home Delivery</option>
-                        <option value="Office Delivery">Office Delivery</option>
+
+                        <option value="Dine In">
+                            Dine In
+                        </option>
+
+                        <option value="Take Away">
+                            Take Away
+                        </option>
+
+                        <option value="Home Delivery">
+                            Home Delivery
+                        </option>
+
+                        <option value="Office Delivery">
+                            Office Delivery
+                        </option>
+
                     </select>
+
                 </div>
 
                 <div class="form-group">
+
                     <label for="date">
                         Preferred Date *
                     </label>
 
                     <input type="date" id="date" name="date" required>
+
                 </div>
 
                 <div class="form-group">
+
                     <label for="message">
                         Additional Instructions
                     </label>
 
                     <textarea id="message" name="message" rows="5" maxlength="300"
                         placeholder="Enter any special requests..."></textarea>
+
                 </div>
 
                 <button type="submit" class="button">
+
                     Place Order
+
                 </button>
 
             </form>
+
         </section>
 
     </main>

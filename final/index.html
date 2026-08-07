@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Masa Delight Abuja | Home</title>
@@ -13,28 +15,43 @@
     <meta name="author" content="Magdalene Shehu">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Masa Delight Abuja">
-    <meta property="og:description" content="Authentic Northern Nigerian Breakfast & Catering">
-    <meta property="og:image" content="images/hero.jpg">
-    <meta property="og:url" content="https://mshehu22.github.io/wdd231/masa-delight-abuja/">
+    <meta property="og:title" content="Masa Delight Abuja | Authentic Nigerian Meals">
+
+    <meta property="og:description"
+        content="Enjoy authentic northern Nigerian masa, breakfast meals, soups, grilled meats, and catering services freshly prepared in Abuja.">
+
+    <meta property="og:image" content="https://mshehu22.github.io/wdd231/final/images/hero.jpg">
+
+    <meta property="og:url" content="https://mshehu22.github.io/wdd231/final/index.html">
+
     <meta property="og:site_name" content="Masa Delight Abuja">
+
     <meta property="og:type" content="website">
 
+    <!-- Favicon -->
     <link rel="icon" href="images/logo.png" type="image/png">
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/base.css">
+
     <link rel="stylesheet" href="styles/larger.css">
 
+    <!-- JavaScript -->
     <script src="scripts/navigation.js" defer></script>
+
     <script src="scripts/date.js" defer></script>
+
     <script type="module" src="scripts/main.js"></script>
+
 </head>
 
 <body>
@@ -47,9 +64,13 @@
 
             <div>
 
-                <h1>Masa Delight Abuja</h1>
+                <p class="site-title">
+                    Masa Delight Abuja
+                </p>
 
-                <p>Authentic Northern Nigerian Breakfast & Catering</p>
+                <p>
+                    Authentic Northern Nigerian Breakfast &amp; Catering
+                </p>
 
             </div>
 
@@ -63,11 +84,17 @@
 
         <nav id="navigation">
 
-            <a href="index.html" class="active">Home</a>
+            <a href="index.html" class="active">
+                Home
+            </a>
 
-            <a href="menu.html">Menu</a>
+            <a href="menu.html">
+                Menu
+            </a>
 
-            <a href="contact.html">Contact</a>
+            <a href="order.html">
+                Order
+            </a>
 
         </nav>
 
@@ -77,28 +104,68 @@
 
         <section class="hero">
 
-            <img src="images/hero.jpg" alt="Fresh Masa with Nigerian delicacies" width="1200" height="700"
+            <img src="images/hero.jpg" alt="Fresh Masa with Nigerian delicacies" width="1200" height="600"
                 loading="eager">
 
             <div class="hero-text">
 
-                <h2>Fresh Masa Made Every Morning</h2>
+                <h1>
+                    Masa Delight Abuja
+                </h1>
 
                 <p>
+                    Authentic Northern Nigerian Breakfast &amp; Catering
+                </p>
 
-                    Welcome to Masa Delight Abuja, your destination for authentic
-                    northern Nigerian breakfast. We prepare freshly made masa,
-                    delicious soups, suya, grilled meats, tea combinations,
-                    and catering services for homes, offices,
-                    meetings, and special events throughout Abuja.
-
+                <p>
+                    Freshly prepared masa, delicious traditional meals,
+                    grilled meats, soups, and catering options made for
+                    families, offices, and special occasions in Abuja.
                 </p>
 
                 <a href="menu.html" class="button">
-
                     Explore Our Menu
-
                 </a>
+
+                <a href="order.html" class="button">
+                    Place an Order
+                </a>
+
+            </div>
+
+        </section>
+
+        <section class="welcome">
+
+            <h2>
+                Welcome to Masa Delight Abuja
+            </h2>
+
+            <p>
+                We bring the authentic taste of northern Nigerian masa
+                and traditional breakfast meals to Abuja. Our meals are
+                freshly prepared with carefully selected ingredients
+                and served with delicious local accompaniments.
+            </p>
+
+            <p id="visitMessage"></p>
+
+        </section>
+
+        <section class="featured">
+
+            <h2>
+                Featured Meals
+            </h2>
+
+            <p>
+                Discover some of our popular meals prepared fresh for
+                breakfast, lunch, gatherings, and special occasions.
+            </p>
+
+            <div id="featuredItems" class="menu-grid">
+
+                <!-- Featured meals are loaded dynamically with JavaScript -->
 
             </div>
 
@@ -106,75 +173,50 @@
 
         <section class="about">
 
-            <h2>About Masa Delight Abuja</h2>
-
-            <p>
-
-                Masa Delight Abuja is committed to serving freshly prepared,
-                high-quality northern Nigerian meals using carefully selected
-                ingredients. Our goal is to provide affordable,
-                delicious meals with excellent customer service,
-                whether you dine with us or order for delivery.
-
-            </p>
-
-        </section>
-
-        <section class="featured">
-
-            <h2>Featured Menu</h2>
-
-            <div id="featuredMenu" class="menu-grid">
-
-                <!-- Featured meals loaded by JavaScript -->
-
-            </div>
-
-        </section>
-        <section class="why-us">
-
-            <h2>Why Choose Masa Delight Abuja?</h2>
+            <h2>
+                Why Choose Masa Delight Abuja?
+            </h2>
 
             <div class="features">
 
                 <article class="feature-card">
 
-                    <h3>Fresh Every Day</h3>
+                    <h3>
+                        Freshly Prepared
+                    </h3>
 
                     <p>
-
-                        Every batch of masa is freshly prepared each morning using
-                        quality ingredients to ensure delicious taste and excellent
-                        freshness.
-
+                        Our masa and accompanying meals are prepared
+                        fresh to provide a delicious and satisfying
+                        dining experience.
                     </p>
 
                 </article>
 
                 <article class="feature-card">
 
-                    <h3>Affordable Meals</h3>
+                    <h3>
+                        Authentic Flavours
+                    </h3>
 
                     <p>
-
-                        We believe everyone deserves great food at reasonable prices.
-                        Our menu offers satisfying meals for individuals, families,
-                        and groups.
-
+                        We celebrate traditional northern Nigerian
+                        flavours while providing meals that suit
+                        modern families and busy customers.
                     </p>
 
                 </article>
 
                 <article class="feature-card">
 
-                    <h3>Professional Catering</h3>
+                    <h3>
+                        Catering Services
+                    </h3>
 
                     <p>
-
-                        We provide catering services for birthdays, weddings,
-                        seminars, office meetings, religious gatherings,
-                        and other special occasions.
-
+                        From family gatherings to office meetings,
+                        weddings, birthdays, and special events,
+                        we provide convenient catering options.
                     </p>
 
                 </article>
@@ -183,87 +225,46 @@
 
         </section>
 
-        <section class="favorites">
+        <section class="gallery">
 
-            <h2>Customer Favorites</h2>
+            <h2>
+                A Taste of Masa Delight
+            </h2>
 
-            <div class="favorites-grid">
+            <div class="gallery-grid">
 
                 <figure>
 
-                    <img src="images/masa-with-suya.jpg" alt="Fresh masa served with suya" width="400" height="300"
+                    <img src="images/masa-with-suya.jpg" alt="Fresh masa served with suya" width="600" height="400"
                         loading="lazy">
 
-                    <figcaption>Masa with Suya</figcaption>
+                    <figcaption>
+                        Masa with Suya
+                    </figcaption>
 
                 </figure>
 
                 <figure>
 
                     <img src="images/masa-breakfast-combo.jpg" alt="Traditional breakfast combo with masa and tea"
-                        width="400" height="300" loading="lazy">
+                        width="600" height="400" loading="lazy">
 
-                    <figcaption>Breakfast Combo</figcaption>
+                    <figcaption>
+                        Masa Breakfast Combo
+                    </figcaption>
 
                 </figure>
 
                 <figure>
 
-                    <img src="images/masa-with-pepper-soup.jpg" alt="Fresh masa served with pepper soup" width="400"
-                        height="300" loading="lazy">
+                    <img src="images/masa-with-pepper-soup.jpg" alt="Fresh masa served with pepper soup" width="600"
+                        height="400" loading="lazy">
 
-                    <figcaption>Masa with Pepper Soup</figcaption>
+                    <figcaption>
+                        Masa with Pepper Soup
+                    </figcaption>
 
                 </figure>
-
-            </div>
-
-        </section>
-
-        <section class="testimonials">
-
-            <h2>What Our Customers Say</h2>
-
-            <div class="testimonial-grid">
-
-                <article class="testimonial">
-
-                    <p>
-
-                        "The best masa I've tasted in Abuja. Fresh, soft, and always
-                        served hot."
-
-                    </p>
-
-                    <h3>— Amina S.</h3>
-
-                </article>
-
-                <article class="testimonial">
-
-                    <p>
-
-                        "Excellent customer service and delicious breakfast. I order
-                        for my office almost every week."
-
-                    </p>
-
-                    <h3>— David O.</h3>
-
-                </article>
-
-                <article class="testimonial">
-
-                    <p>
-
-                        "Their catering service made our family celebration stress-free.
-                        Everyone loved the food."
-
-                    </p>
-
-                    <h3>— Hauwa M.</h3>
-
-                </article>
 
             </div>
 
@@ -271,55 +272,21 @@
 
         <section class="call-to-action">
 
-            <h2>Ready to Enjoy Fresh Masa?</h2>
+            <h2>
+                Ready to Enjoy Fresh Masa?
+            </h2>
 
             <p>
-
-                Browse our delicious menu and place your order today for breakfast,
-                lunch, catering, or your next special event.
-
+                Explore our complete menu or place an order for
+                freshly prepared meals in Abuja.
             </p>
 
-            <a href="contact.html" class="button">
-
-                Contact Us
-
+            <a href="menu.html" class="button">
+                View Menu
             </a>
 
-        </section>
-        <section class="visit">
-
-            <h2>Visit Us Today</h2>
-
-            <div class="visit-details">
-
-                <p>
-                    <strong>Location:</strong><br>
-                    Garki District, Abuja, Nigeria
-                </p>
-
-                <p>
-                    <strong>Business Hours:</strong><br>
-                    Monday – Sunday<br>
-                    7:00 AM – 9:00 PM
-                </p>
-
-                <p>
-                    <strong>Phone:</strong><br>
-                    55555888
-                </p>
-
-                <p>
-                    <strong>Email:</strong><br>
-                    info@masadelightabuja.com
-                </p>
-
-            </div>
-
-            <a href="contact.html" class="button">
-
-                Place an Order
-
+            <a href="order.html" class="button">
+                Order Now
             </a>
 
         </section>
@@ -329,9 +296,11 @@
     <footer>
 
         <p>
+
             &copy;
             <span id="year"></span>
             Masa Delight Abuja
+
         </p>
 
         <p>

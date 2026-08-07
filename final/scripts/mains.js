@@ -23,30 +23,26 @@ const visitMessage = document.querySelector("#visitMessage");
 
 const lastVisit = localStorage.getItem("lastVisit");
 
-if (!lastVisit) {
+if (visitMessage) {
+    if (!lastVisit) {
+        visitMessage.textContent =
+            "Welcome! We hope you enjoy our delicious masa.";
+    } else {
+        const previousVisit = new Date(lastVisit);
 
-    visitMessage.textContent =
-        "Welcome! We hope you enjoy our delicious masa.";
+        visitMessage.textContent =
+            `Welcome back! Your last visit was ${previousVisit.toLocaleDateString()}.`;
+    }
 
-} else {
-
-    const previousVisit = new Date(lastVisit);
-
-    visitMessage.textContent =
-        `Welcome back! Your last visit was ${previousVisit.toLocaleDateString()}.`;
-
+    localStorage.setItem("lastVisit", new Date().toISOString());
 }
-
-localStorage.setItem("lastVisit", new Date().toISOString());
 
 // ----------------------------
 // Fetch Featured Meals
 // ----------------------------
 
 async function loadFeaturedMeals() {
-
     try {
-
         const response = await fetch("data/menu.json");
 
         if (!response.ok) {
@@ -56,21 +52,18 @@ async function loadFeaturedMeals() {
         const meals = await response.json();
 
         displayFeatured(meals.slice(0, 6));
+    } catch (error) {
+        console.error("Error loading featured meals:", error);
 
+        if (featuredContainer) {
+            featuredContainer.innerHTML = `
+                <p>
+                    Sorry, the featured menu could not be loaded.
+                    Please try again later.
+                </p>
+            `;
+        }
     }
-
-    catch (error) {
-
-        console.error(error);
-
-        featuredContainer.innerHTML = `
-            <p>
-                Sorry, the featured menu could not be loaded.
-            </p>
-        `;
-
-    }
-
 }
 
 // ----------------------------
@@ -78,20 +71,23 @@ async function loadFeaturedMeals() {
 // ----------------------------
 
 function displayFeatured(meals) {
+    if (!featuredContainer) {
+        return;
+    }
 
     featuredContainer.innerHTML = "";
 
-    meals.forEach(meal => {
-
+    meals.forEach((meal) => {
         const card = document.createElement("article");
 
         card.classList.add("card");
 
         card.innerHTML = `
-
             <img
                 src="${meal.image}"
                 alt="${meal.name}"
+                width="400"
+                height="300"
                 loading="lazy">
 
             <div class="card-content">
@@ -101,27 +97,27 @@ function displayFeatured(meals) {
                 <p>${meal.description}</p>
 
                 <p class="price">
-
                     ${formatPrice(meal.price)}
-
                 </p>
 
-                <a
-                    href="menu.html"
-                    class="button">
+                <p>
+                    <strong>Category:</strong>
+                    ${meal.category}
+                </p>
 
+                <a href="menu.html" class="button">
                     View Menu
-
                 </a>
 
             </div>
-
         `;
 
         featuredContainer.appendChild(card);
-
     });
-
 }
+
+// ----------------------------
+// Start Application
+// ----------------------------
 
 loadFeaturedMeals();
