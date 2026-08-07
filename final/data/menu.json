@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "name": "Plain Masa",
+        "category": "Classic",
+        "price": 500,
+        "description": "Freshly prepared soft northern Nigerian masa served warm.",
+        "image": "images/plain-masa.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Masa Breakfast Combo",
+        "category": "Breakfast",
+        "price": 1500,
+        "description": "Traditional masa served with breakfast accompaniments for a satisfying morning meal.",
+        "image": "images/masa-breakfast-combo.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Masa with Fresh Fish",
+        "category": "Seafood",
+        "price": 2200,
+        "description": "Fresh masa served with grilled fish and vegetables.",
+        "image": "images/masa-with-fresh-fish.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Masa with Kpomo Sauce",
+        "category": "Special",
+        "price": 1800,
+        "description": "Soft masa served with delicious traditional kpomo sauce.",
+        "image": "images/masa-with-kpomo-sauce.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Masa with Meat Salad",
+        "category": "Special",
+        "price": 2500,
+        "description": "Traditional masa paired with flavorful meat salad.",
+        "image": "images/masa-with-meat-salad.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Masa with Mixed Vegetables",
+        "category": "Healthy",
+        "price": 1700,
+        "description": "Fresh masa served with healthy mixed vegetables.",
+        "image": "images/masa-with-mixed-vegetables.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Masa with Peppered Chicken",
+        "category": "Chicken",
+        "price": 2500,
+        "description": "Masa served with spicy peppered chicken prepared with Nigerian spices.",
+        "image": "images/masa-with-peppered-chicken.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Masa with Pepper Soup",
+        "category": "Soup",
+        "price": 1800,
+        "description": "Soft masa served alongside hot spicy pepper soup.",
+        "image": "images/masa-with-pepper-soup.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Masa with Spiced Meat",
+        "category": "Grill",
+        "price": 2500,
+        "description": "Fresh masa served with specially seasoned spiced meat.",
+        "image": "images/masa-with-spiced-meat.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Masa with Stew",
+        "category": "Classic",
+        "price": 1500,
+        "description": "Traditional masa served with rich homemade stew.",
+        "image": "images/masa-with-stew.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Masa with Stuffed Chicken",
+        "category": "Chicken",
+        "price": 3000,
+        "description": "Traditional masa served with delicious stuffed chicken.",
+        "image": "images/masa-with-stuffed-chicken.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Masa with Stuffed Sausage",
+        "category": "Special",
+        "price": 2500,
+        "description": "Fresh masa paired with premium stuffed sausage.",
+        "image": "images/masa-with-stuffed-sausage.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Masa with Suya",
+        "category": "Grill",
+        "price": 2000,
+        "description": "Soft masa served with spicy Nigerian beef suya.",
+        "image": "images/masa-with-suya.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Masa with Taushe",
+        "category": "Special",
+        "price": 2000,
+        "description": "Traditional masa served with flavorful taushe sauce.",
+        "image": "images/masa-with-taushe.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Masa with Yaji",
+        "category": "Classic",
+        "price": 700,
+        "description": "Traditional masa sprinkled generously with authentic yaji spice.",
+        "image": "images/masa-with-yaji.jpg"
+    }
+]

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Masa Delight Abuja | Order</title>
+
+    <meta name="description"
+        content="Place your order for authentic northern Nigerian masa, breakfast combinations, soups, grilled meals and catering services in Abuja.">
+
+    <meta name="author" content="Magdalene Shehu">
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Masa Delight Abuja | Order">
+
+    <meta property="og:description" content="Order freshly prepared northern Nigerian meals online.">
+
+    <meta property="og:image" content="images/hero.jpg">
+
+    <meta property="og:url" content="https://mshehu22.github.io/wdd231/masa-delight-abuja/order.html">
+
+    <meta property="og:site_name" content="Masa Delight Abuja">
+
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="images/logo.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/base.css">
+
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/navigation.js" defer></script>
+
+    <script src="scripts/date.js" defer></script>
+
+    <script type="module" src="scripts/order.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo-box">
+
+            <img src="images/logo.png" alt="Masa Delight Abuja Logo" width="80" height="80">
+
+            <div>
+
+                <h1>Masa Delight Abuja</h1>
+
+                <p>
+
+                    Authentic Northern Nigerian Breakfast & Catering
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <button id="menuButton" aria-label="Toggle Navigation" aria-controls="navigation" aria-expanded="false">
+
+            ☰
+
+        </button>
+
+        <nav id="navigation">
+
+            <a href="index.html">
+
+                Home
+
+            </a>
+
+            <a href="menu.html">
+
+                Menu
+
+            </a>
+
+            <a href="order.html" class="active">
+
+                Order
+
+            </a>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="page-banner">
+
+            <h2>
+
+                Place Your Order
+
+            </h2>
+
+            <p>
+
+                Complete the form below and we'll contact you to confirm your order.
+
+            </p>
+
+        </section>
+
+        <section class="contact-information">
+
+            <h2>
+
+                Business Information
+
+            </h2>
+
+            <div class="contact-grid">
+
+                <article>
+
+                    <h3>
+
+                        Location
+
+                    </h3>
+
+                    <p>
+
+                        Garki District<br>
+
+                        Abuja, Nigeria
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>
+
+                        Phone
+
+                    </h3>
+
+                    <p>
+
+                        +234 55555888
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>
+
+                        Business Hours
+
+                    </h3>
+
+                    <p>
+
+                        Monday – Sunday<br>
+
+                        7:00 AM – 9:00 PM
+
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>
+
+                        Catering
+
+                    </h3>
+
+                    <p>
+
+                        Weddings<br>
+
+                        Birthdays<br>
+
+                        Office Meetings<br>
+
+                        Special Events
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="order-form">
+
+            <form method="get" action="thankyou.html">
+
+                <div class="form-group">
+
+                    <label for="fullname">
+
+                        Full Name *
+
+                    </label>
+
+                    <input type="text" id="fullname" name="fullname" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="phone">
+
+                        Phone Number *
+
+                    </label>
+
+                    <input type="tel" id="phone" name="phone" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="email">
+
+                        Email Address
+
+                    </label>
+
+                    <input type="email" id="email" name="email">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="meal">
+
+                        Preferred Meal *
+
+                    </label>
+
+                    <select id="meal" name="meal" required>
+
+                        <option value="">
+
+                            Select a Meal
+
+                        </option>
+
+                        <option>Plain Masa</option>
+
+                        <option>Egg Masa</option>
+
+                        <option>Milk Masa</option>
+
+                        <option>Honey Masa</option>
+
+                        <option>Butter Masa</option>
+
+                        <option>Cheese Masa</option>
+
+                        <option>Mini Masa Platter</option>
+
+                        <option>Masa with Pepper Soup</option>
+
+                        <option>Masa with Fresh Fish</option>
+
+                        <option>Masa with Peppered Chicken</option>
+
+                        <option>Masa with Stuffed Chicken</option>
+
+                        <option>Masa with Stuffed Sausage</option>
+
+                        <option>Masa with Suya</option>
+
+                        <option>Masa with Yaji</option>
+
+                        <option>Masa with Mixed Vegetables</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="quantity">
+
+                        Quantity *
+
+                    </label>
+
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="delivery">
+
+                        Delivery Option
+
+                    </label>
+
+                    <select id="delivery" name="delivery">
+
+                        <option>Dine In</option>
+
+                        <option>Take Away</option>
+
+                        <option>Home Delivery</option>
+
+                        <option>Office Delivery</option>
+
+                    </select>
+
+                </div>
+                <div class="form-group">
+
+                    <label for="date">
+
+                        Preferred Date *
+
+                    </label>
+
+                    <input type="date" id="date" name="date" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="message">
+
+                        Additional Instructions
+
+                    </label>
+
+                    <textarea id="message" name="message" rows="5" maxlength="300"
+                        placeholder="Enter any special requests..."></textarea>
+
+                </div>
+
+                <button type="submit" class="button">
+
+                    Place Order
+
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>
+
+            &copy;
+
+            <span id="year"></span>
+
+            Masa Delight Abuja
+
+        </p>
+
+        <p>
+
+            WDD 231 Final Project
+
+        </p>
+
+        <p>
+
+            Created by Magdalene Shehu
+
+        </p>
+
+        <p>
+
+            <a href="attributions.html">
+
+                Attributions
+
+            </a>
+
+        </p>
+
+        <p>
+
+            <a href="https://youtu.be/REPLACE_WITH_YOUR_VIDEO" target="_blank" rel="noopener">
+
+                Project Demonstration Video
+
+            </a>
+
+        </p>
+
+        <p>
+
+            Last Modified:
+
+            <span id="lastModified"></span>
+
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

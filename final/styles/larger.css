@@ -1,0 +1,223 @@
+/* ==========================================
+   Masa Delight Abuja
+   larger.css
+   Desktop / Large Screen Styles
+========================================== */
+
+@media only screen and (min-width: 768px) {
+
+    /* ---------- Header ---------- */
+
+    #menu {
+        display: none;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        background: transparent;
+        gap: .5rem;
+    }
+
+    .navigation a {
+        border: none;
+        padding: .75rem 1.2rem;
+        border-radius: 6px;
+    }
+
+    .navigation a:hover,
+    .navigation a.active {
+        background: var(--secondary-color);
+        color: var(--dark-color);
+    }
+
+    /* ---------- Hero ---------- */
+
+    .hero-text h2 {
+        font-size: 3rem;
+    }
+
+    .hero-text p {
+        font-size: 1.15rem;
+        max-width: 750px;
+    }
+
+    /* ---------- General ---------- */
+
+    main {
+        padding: 2rem;
+    }
+
+    section {
+        margin: 4rem 0;
+    }
+
+    section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* ---------- Featured Cards ---------- */
+
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card img {
+        height: 240px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .price {
+        margin-top: auto;
+        padding-top: .75rem;
+    }
+
+    /* ---------- About ---------- */
+
+    .about {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .about img {
+        height: 420px;
+        object-fit: cover;
+    }
+
+    /* ---------- Gallery ---------- */
+
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery img {
+        height: 260px;
+        object-fit: cover;
+    }
+
+    /* ---------- Contact ---------- */
+
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        gap: 2.5rem;
+    }
+
+    /* ---------- Contact Form ---------- */
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+        font-size: 1rem;
+    }
+
+    /* ---------- Footer ---------- */
+
+    footer {
+        padding: 3rem 2rem;
+    }
+
+    footer .socials {
+        gap: 1.5rem;
+    }
+
+    footer .socials img {
+        width: 40px;
+    }
+
+    /* ---------- Buttons ---------- */
+
+    .btn {
+        transition: background .3s ease,
+                    color .3s ease,
+                    transform .3s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-3px);
+    }
+
+    /* ---------- Tables ---------- */
+
+    table th,
+    table td {
+        padding: 1rem;
+    }
+
+    /* ---------- Utility ---------- */
+
+    .center {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    /* ---------- Animation ---------- */
+
+    .fade-in {
+        animation-duration: 1.2s;
+    }
+}
+
+/* ==========================================
+   Extra Large Screens
+========================================== */
+
+@media only screen and (min-width: 1200px) {
+
+    body {
+        font-size: 1.05rem;
+    }
+
+    .hero-text h2 {
+        font-size: 3.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.25rem;
+    }
+
+    .cards {
+        gap: 2.5rem;
+    }
+
+    .gallery {
+        gap: 1.5rem;
+    }
+
+    .about {
+        gap: 4rem;
+    }
+
+    .contact-grid {
+        gap: 4rem;
+    }
+
+    .logo img {
+        width: 70px;
+    }
+
+    .logo h1 {
+        font-size: 1.6rem;
+    }
+}
