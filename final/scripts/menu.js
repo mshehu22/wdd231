@@ -12,6 +12,7 @@ if (year) {
     year.textContent = new Date().getFullYear();
 }
 
+
 // ---------- Navigation ----------
 
 const menuButton = document.querySelector("#menuButton");
@@ -24,9 +25,11 @@ if (menuButton && navigation) {
         const expanded = navigation.classList.contains("open");
 
         menuButton.setAttribute("aria-expanded", expanded);
+
         menuButton.textContent = expanded ? "✖" : "☰";
     });
 }
+
 
 // ---------- DOM Elements ----------
 
@@ -39,9 +42,14 @@ const closeDialog = document.querySelector("#closeDialog");
 
 let menuItems = [];
 
+
 // ---------- Fetch Menu Data ----------
 
 async function getMenu() {
+    if (!menuContainer) {
+        return;
+    }
+
     try {
         const response = await fetch("data/menu.json");
 
@@ -51,27 +59,59 @@ async function getMenu() {
 
         menuItems = await response.json();
 
+        if (!Array.isArray(menuItems)) {
+            throw new Error("Menu data is not in the correct format.");
+        }
+
         displayMenu(menuItems);
+        populateCategories();
         restoreFilter();
 
     } catch (error) {
-        console.error(error);
+        console.error("Menu loading error:", error);
 
-        if (menuContainer) {
-            menuContainer.innerHTML = `
-                <p class="error">
-                    Unable to load menu items.
-                    Please refresh the page.
-                </p>
-            `;
-        }
+        menuContainer.innerHTML = `
+            <p class="error">
+                Unable to load menu items.
+                Please refresh the page.
+            </p>
+        `;
     }
 }
+
+
+// ---------- Create Category Options ----------
+
+function populateCategories() {
+    if (!categorySelect) {
+        return;
+    }
+
+    const categories = [
+        ...new Set(menuItems.map(item => item.category))
+    ].sort();
+
+    categorySelect.innerHTML = `
+        <option value="all">All Categories</option>
+    `;
+
+    categories.forEach(category => {
+        const option = document.createElement("option");
+
+        option.value = category;
+        option.textContent = category;
+
+        categorySelect.appendChild(option);
+    });
+}
+
 
 // ---------- Display Menu ----------
 
 function displayMenu(items) {
-    if (!menuContainer) return;
+    if (!menuContainer) {
+        return;
+    }
 
     menuContainer.innerHTML = "";
 
@@ -81,6 +121,7 @@ function displayMenu(items) {
                 No menu items found for this category.
             </p>
         `;
+
         return;
     }
 
@@ -99,10 +140,12 @@ function displayMenu(items) {
 
                 <h3>${item.name}</h3>
 
-                <p>${item.description}</p>
+                <p>
+                    ${item.description}
+                </p>
 
                 <p class="price">
-                    ₦${item.price.toLocaleString()}
+                    ₦${Number(item.price).toLocaleString()}
                 </p>
 
                 <p>
@@ -112,7 +155,8 @@ function displayMenu(items) {
 
                 <button
                     class="details-btn"
-                    type="button">
+                    type="button"
+                    aria-label="View details for ${item.name}">
                     View Details
                 </button>
 
@@ -121,13 +165,16 @@ function displayMenu(items) {
 
         const button = card.querySelector(".details-btn");
 
-        button.addEventListener("click", () => {
-            openDialog(item);
-        });
+        if (button) {
+            button.addEventListener("click", () => {
+                openDialog(item);
+            });
+        }
 
         menuContainer.appendChild(card);
     });
 }
+
 
 // ---------- Filter Menu ----------
 
@@ -142,22 +189,38 @@ if (categorySelect) {
             return;
         }
 
-        const filtered = menuItems.filter(
+        const filteredItems = menuItems.filter(
             item => item.category === category
         );
 
-        displayMenu(filtered);
+        displayMenu(filteredItems);
     });
 }
+
 
 // ---------- Restore Previous Filter ----------
 
 function restoreFilter() {
-    if (!categorySelect) return;
+    if (!categorySelect) {
+        return;
+    }
 
     const savedCategory = localStorage.getItem("selectedCategory");
 
-    if (!savedCategory) return;
+    if (!savedCategory) {
+        return;
+    }
+
+    const categoryExists = [
+        ...categorySelect.options
+    ].some(option => option.value === savedCategory);
+
+    if (!categoryExists) {
+        localStorage.removeItem("selectedCategory");
+        categorySelect.value = "all";
+        displayMenu(menuItems);
+        return;
+    }
 
     categorySelect.value = savedCategory;
 
@@ -166,17 +229,20 @@ function restoreFilter() {
         return;
     }
 
-    const filtered = menuItems.filter(
+    const filteredItems = menuItems.filter(
         item => item.category === savedCategory
     );
 
-    displayMenu(filtered);
+    displayMenu(filteredItems);
 }
+
 
 // ---------- Modal Dialog ----------
 
 function openDialog(item) {
-    if (!dialog || !dialogContent) return;
+    if (!dialog || !dialogContent) {
+        return;
+    }
 
     dialogContent.innerHTML = `
         <h2>${item.name}</h2>
@@ -196,24 +262,34 @@ function openDialog(item) {
         </p>
 
         <p class="price">
-            ₦${item.price.toLocaleString()}
+            ₦${Number(item.price).toLocaleString()}
         </p>
     `;
 
-    dialog.showModal();
+    if (typeof dialog.showModal === "function") {
+        dialog.showModal();
+    } else {
+        dialog.setAttribute("open", "");
+    }
 
     if (closeDialog) {
         closeDialog.focus();
     }
 }
 
-// ---------- Close Dialog ----------
+
+// ---------- Close Dialog Button ----------
 
 if (closeDialog && dialog) {
     closeDialog.addEventListener("click", () => {
         dialog.close();
     });
+}
 
+
+// ---------- Close Dialog When Clicking Outside ----------
+
+if (dialog) {
     dialog.addEventListener("click", event => {
         const rect = dialog.getBoundingClientRect();
 
@@ -228,6 +304,17 @@ if (closeDialog && dialog) {
         }
     });
 }
+
+
+// ---------- Close Dialog With Escape ----------
+
+if (dialog) {
+    dialog.addEventListener("cancel", event => {
+        event.preventDefault();
+        dialog.close();
+    });
+}
+
 
 // ---------- Initialize ----------
 
